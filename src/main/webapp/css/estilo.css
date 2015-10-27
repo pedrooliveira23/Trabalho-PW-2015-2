@@ -1,0 +1,19 @@
+.login {
+	z-index=1000;
+}
+
+::-webkit-input-placeholder {
+   color: #757575;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #757575;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #757575;  
+}
+
+:-ms-input-placeholder {  
+   color: #757575;  
+}
