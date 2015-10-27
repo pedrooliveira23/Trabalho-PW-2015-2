@@ -4,7 +4,7 @@ Objetivo do trabalho: desenvolver uma aplicaçao web de cadastro de instituiçoe
 Framework: http://materializecss.com/
 
 
-pagina principal:
+<b>Pagina principal:</b>
 
 ======================================================================================================================
 
@@ -19,7 +19,7 @@ Botao Cadastrar instituicao:
 
 ======================================================================================================================
   
-Pagina de cadastro de instituicao
+<b>Pagina de cadastro de instituicao</b>
 
 ======================================================================================================================
 
@@ -33,5 +33,8 @@ Cadastrar Instituicao :
   reposavel por veracidade de diplomas/egressos
   contato (telefone e e-mail)
   
-
+======================================================================================================================
   
+<b>Pagina de listagem de instituicoes</b>
+======================================================================================================================
+
