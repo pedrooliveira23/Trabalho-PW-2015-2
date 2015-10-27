@@ -50,5 +50,5 @@ Cadastrar Instituicao :
 
 -Incluir curso<br>
 -Alterar<br>
--
+
 
