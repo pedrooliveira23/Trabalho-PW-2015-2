@@ -6,7 +6,6 @@ Framework: http://materializecss.com/
 
 <b>Pagina principal:</b>
 
-======================================================================================================================
 
 Pesquisar Instituicao:
   -Por nome da instituicao  de ensino(pesquisar sequencia de caracteres em qualquer parte dos nomes cadastrados)<br>
@@ -21,7 +20,6 @@ Botao Cadastrar instituicao:
   
 <b>Pagina de cadastro de instituicao</b>
 
-======================================================================================================================
 
 Cadastrar Instituicao :
   -Nome<br>
@@ -37,5 +35,5 @@ Cadastrar Instituicao :
   
 <b>Pagina de listagem de instituicoes</b>
 
-======================================================================================================================
+
 
