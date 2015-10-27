@@ -35,5 +35,15 @@ Cadastrar Instituicao :
   
 <b>Pagina de listagem de instituicoes</b>
 
+======================================================================================================================
+
+<b>Pagina de vizualizacao de instituicoes</b>
+ -Alterar<br>;
+ -Ver Cursos(ir para pagina de cursos)<br>;
+
+
+======================================================================================================================
+
+<b>Pagina de listagem de instituicoes</b>
 
 
