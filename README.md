@@ -46,6 +46,6 @@ Cadastrar Instituicao :
 
 ======================================================================================================================
 
-<b>Pagina de listagem de instituicoes</b>
+<b>Pagina de listagem de Cursos</b>
 
 
