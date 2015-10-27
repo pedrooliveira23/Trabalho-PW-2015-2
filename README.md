@@ -38,8 +38,10 @@ Cadastrar Instituicao :
 ======================================================================================================================
 
 <b>Pagina de vizualizacao de instituicoes</b>
- -Alterar<br>;
- -Ver Cursos(ir para pagina de cursos)<br>;
+
+
+ -Alterar<br>
+ -Ver Cursos(ir para pagina de cursos)<br>
 
 
 ======================================================================================================================
