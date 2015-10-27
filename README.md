@@ -48,4 +48,7 @@ Cadastrar Instituicao :
 
 <b>Pagina de listagem de Cursos</b>
 
+-Incluir curso<br>
+-Alterar<br>
+-
 
