@@ -9,11 +9,11 @@ Framework: http://materializecss.com/
 ======================================================================================================================
 
 Pesquisar Instituicao:
-  Por nome da instituicao  de ensino(pesquisar sequencia de caracteres em qualquer parte dos nomes cadastrados)
-  Pelo CNPJ
-  Pela Cidade
-  Pelo nivel de curso (Medio, Superior ou HIbrido)
-  Por titulo
+  Por nome da instituicao  de ensino(pesquisar sequencia de caracteres em qualquer parte dos nomes cadastrados)<br>
+  Pelo CNPJ<br>
+  Pela Cidade<br>
+  Pelo nivel de curso (Medio, Superior ou HIbrido)<br>
+  Por titulo<br>
 
 Botao Cadastrar instituicao:
 
@@ -24,14 +24,14 @@ Botao Cadastrar instituicao:
 ======================================================================================================================
 
 Cadastrar Instituicao :
-  Nome
-  CNPJ
-  Nivel de curso
-  Endereço
-  Telefone
-  e-mail
-  reposavel por veracidade de diplomas/egressos
-  contato (telefone e e-mail)
+  Nome<br>
+  CNPJ<br>
+  Nivel de curso<br>
+  Endereço<br>
+  Telefone<br>
+  e-mail<br>
+  reposavel por veracidade de diplomas/egressos<br>
+  contato (telefone e e-mail)<br>
   
 ======================================================================================================================
   
