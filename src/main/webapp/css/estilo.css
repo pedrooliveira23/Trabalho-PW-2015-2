@@ -1,19 +1,37 @@
 .login {
+	width: 200%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	position: fixed;
+	right: 0px;
+}
+
+.formLogin {
+	position: fixed;
+	left:50%;
+	transform: translateX(-50%);
 	width: 25%;
+	
+}
+
+#falhaLogin {
+	color: red;
+	margin-top:50px;
 }
 
 ::-webkit-input-placeholder {
-   color: #757575;
+	color: #fff;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #757575;  
+	color: #fff;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #757575;  
+::-moz-placeholder { /* Firefox 19+ */
+	color: #fff;
 }
 
-:-ms-input-placeholder {  
-   color: #757575;  
+:-ms-input-placeholder {
+	color: #fff;
 }
