@@ -74,22 +74,22 @@
 		<div class="login container">
 			<div class="row">
 				<div class="col-md-offset-5 col-md-3">
-					<div class="form-login">
+					<form class="form-login">
 						<h4>Bem-Vindo</h4>
 						<input type="text" id="userName"
 							class="form-control input-sm chat-input"
-							placeholder="nome de usuário" />
+							placeholder="nome de usuário" name="user" />
 							<input type="password"
 							id="userPassword" class="form-control input-sm chat-input password"
-							placeholder="senha" />
+							placeholder="senha" name="pass"/>
 						<div class="wrapper">
-							<span class="group-btn"> <a href="#"
-								class="btn btn-primary btn-md light-green grey-text text-darken-3" onclick="logar()">Entrar</a>
+							<span class="group-btn"> <input type="submit"
+								class="btn btn-primary btn-md light-green grey-text text-darken-3" onclick="logar()" value="Entrar"/>
 							</span>
 						</div>
 						 </br>
 						<span id="falhaLogin" class="red-text"></span>
-					</div>
+					</form>
 
 				</div>
 			</div>
