@@ -43,3 +43,11 @@
 .li-logo {
 	height: 180px;
 }
+
+.marca-dagua {
+	position: fixed;
+	width: 40%;
+	left: 35%;
+	z-index: -1;
+	
+}
