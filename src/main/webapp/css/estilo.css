@@ -9,15 +9,14 @@
 
 .formLogin {
 	position: fixed;
-	left:50%;
+	left: 50%;
 	transform: translateX(-50%);
 	width: 25%;
-	
 }
 
 #falhaLogin {
 	color: red;
-	margin-top:50px;
+	margin-top: 50px;
 }
 
 ::-webkit-input-placeholder {
@@ -47,7 +46,27 @@
 .marca-dagua {
 	position: fixed;
 	width: 40%;
-	left: 35%;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: -1;
-	
+}
+
+.conteudo {
+	position: relative;
+	margin-left: 240px;
+	top: 50%;
+	transform: translateY(50%);
+}
+
+@media only screen and (max-width : 992px) {
+	.conteudo {
+		margin-left: auto;
+		top: 0;
+		transform: none;
+	}
+}
+
+.setinha {
+	float: left;
+	margin: 130px 0px 0px 240px;
 }
