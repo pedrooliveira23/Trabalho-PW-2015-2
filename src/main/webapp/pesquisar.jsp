@@ -29,7 +29,7 @@
 					&& document.getElementById("userPassword").value == "teste") {
 				document.getElementsByClassName("login")[0].style.display = "none";
 			} else {
-				document.getElementById("falhaLogin").innerHTML = "Falha no Login! Veja se seu Nome de Usu√°rio ou Senha est√£o incorretos.";
+				document.getElementById("falhaLogin").innerHTML = "Falha no Login! Veja se seu Nome de Usu·rio ou Senha est„o incorretos.";
 			}
 		}
 	</script>
@@ -41,7 +41,7 @@
 					<img class="center" src="/cad-institucional/Imagens/Logo.png">
 				</figure>
 				<form>
-					<input id="userName" type="text" placeholder="Nome de Usu√°rio"
+					<input id="userName" type="text" placeholder="Nome de Usu·rio"
 						name="user" /> <input id="userPassword" type="password"
 						placeholder="Senha" name="pass" /> <a href="#" class="right"><buttom
 							type="submit" class="btn" onclick="logar()" />Entrar</buttom></a>
@@ -63,27 +63,41 @@
 				<ul id="slide-out" class="side-nav">
 					<li class="li-logo"><a href="/cad-institucional/"><img
 							class="logo-cad" src="/cad-institucional/Imagens/Logo.png" /></a></li>
-					<li><a href="/cad-institucional/pesquisar.jsp">Pesquisar</a></li>
+					<li><a href="#!">Pesquisar</a></li>
 				</ul>
 				<ul
 					class="side-nav fixed right hide-on-med-and-down light-blue darken-9">
 					<li class="li-logo"><a href="/cad-institucional"><img
 							class="logo-cad" src="/cad-institucional/Imagens/Logo.png" /></a></li>
-					<li><a href="/cad-institucional/pesquisar.jsp" class="grey-text text-darken-4">Pesquisar</a></li>
+					<li><a href="#!" class="grey-text text-darken-4">Pesquisar</a></li>
 				</ul>
 			</div>
 		</header>
 		<div class="container conteudo grey-text text-darken-4">
-			<h1>Bem-Vindo</h1>
-			<p>Suco de cevadiss, √© um leite divinis, qui tem lupuliz, matis,
-				aguis e fermentis. Interagi no m√©, cursus quis, vehicula ac nisi.
-				Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere
-				ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque
-				nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum
-				justo. Aenean ut ante turpis. Pellentesque laoreet m√© vel lectus
-				scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit
-				amet, consectetur adipiscing elit. Etiam ac mauris lectus, non
-				scelerisque augue. Aenean justo massa.</p>
+			<h1>Pesquisar InstituiÁ„o</h1>
+			<form>
+				<input type="text" name="pesquisa"
+					placeholder="Entre com algum dado da instituiÁ„o" />
+			</form>
+			<table>
+				<thead>
+					<th>
+					<td>Nome</td>
+					<td>CNPJ</td>
+					<td>NÌvel de curso</td>
+					<td>EndereÁo</td>
+					<td>Telefone</td>
+					<td>E-mail</td>
+					<td>Respos·vel</td>
+					<td>Telefone do Respons·vel</td>
+					<td>E-mail do Respons·vel</td>
+					</th>
+				</thead>
+			</table>
+			<div class="center-align">
+				<br>
+				<a href="/cad-institucional/novaInstituicao.jsp">Adicionar uma nova instituiÁ„o...</a>
+			</div>
 		</div>
 	</div>
 </body>

@@ -54,8 +54,6 @@
 .conteudo {
 	position: relative;
 	margin-left: 240px;
-	top: 50%;
-	transform: translateY(50%);
 }
 
 @media only screen and (max-width : 992px) {
@@ -66,7 +64,17 @@
 	}
 }
 
+.adicionar {
+	text-align:center;
+}
+
 .setinha {
-	float: left;
-	margin: 130px 0px 0px 240px;
+	display: block;
+	padding:10px;
+	background-color:#03A9F4;
+	float:left;
+}
+
+.setinha:hover {
+	background-color: #DDD;
 }
