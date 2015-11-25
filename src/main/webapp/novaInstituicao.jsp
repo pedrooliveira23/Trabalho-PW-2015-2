@@ -37,6 +37,21 @@
 	<a href="/cad-institucional/pesquisar.jsp"><div class="setinha">
 			<img src="/cad-institucional/Imagens/Left-100.png" />
 		</div> </a>
+		
+		<div class="container">
+			<h1>Adicionar Instituição</h1>
+			<form>
+				<input class="campos" type="text" placeholder="Nome da  Instituição"/>
+				<input class="campos" type="text" placeholder="CNPJ"/>
+				<input class="campos" type="text" placeholder="Nível de curso"/>
+				<input class="campos" type="text" placeholder="Endereço"/>
+				<input class="campos" type="text" placeholder="Telefone"/>
+				<input class="campos" type="text" placeholder="E-mail"/>
+				<input class="campos" type="text" placeholder="Resposável"/>
+				<input class="campos" type="text" placeholder="Telefone do Responsável"/>
+				<input class="campos" type="text" placeholder="E-mail do Responsável"/>
+			</form>
+		</div>
 
 </body>
 </html>
