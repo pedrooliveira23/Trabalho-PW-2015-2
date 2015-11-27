@@ -4,4 +4,44 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>SegurancaFilter</filter-name>
+  	<display-name>SegurancaFilter</display-name>
+  	<description></description>
+  	<filter-class>servlet.login.SegurancaFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>SegurancaFilter</filter-name>
+  	<url-pattern>/SegurancaFilter</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.login.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.login.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>IndexServlet</servlet-name>
+  	<display-name>IndexServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.paginas.IndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IndexServlet</servlet-name>
+  	<url-pattern>/IndexServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
