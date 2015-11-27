@@ -73,12 +73,18 @@
 	padding:10px;
 	background-color:#03A9F4;
 	float:left;
+	position: absolute;
+	top: 0px;
+}
+
+.setinha img {
+	width:100%;
 }
 
 .setinha:hover {
 	background-color: #DDD;
 }
 
-.campos {
-	width: 50%;
+.addInst input {
+	margin-left:0px !important;
 }
