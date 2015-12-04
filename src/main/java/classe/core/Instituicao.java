@@ -2,8 +2,7 @@ package classe.core;
 
 public class Instituicao {
 	private String nome, nivelCurso, endereco, telefone, email,
-			nomeResponsavel, telefoneResponsavel, emailResponsavel;
-	private Cnpj cnpj;
+			nomeResponsavel, telefoneResponsavel, emailResponsavel, cnpj;
 	
 	public String getNome() {
 		return nome;
@@ -53,10 +52,10 @@ public class Instituicao {
 	public void setEmailResponsavel(String emailResponsavel) {
 		this.emailResponsavel = emailResponsavel;
 	}
-	public Cnpj getCnpj() {
+	public String getCnpj() {
 		return cnpj;
 	}
-	public void setCnpj(Cnpj cnpj) {
+	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 }

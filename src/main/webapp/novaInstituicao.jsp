@@ -42,19 +42,19 @@
 		<h1>Adicionar Instituição</h1>
 		<form class="addInst">
 			<input class="col s6 m6 l6" type="text"
-				placeholder="Nome da  Instituição" /> <input class="col s6 m6 l6"
-				type="text" placeholder="CNPJ" /> <input class="col s6 m6 l6"
-				type="text" placeholder="Nível de curso" /> <input
-				class="col s6 m6 l6" type="text" placeholder="Endereço" /> <input
-				class="col s6 m6 l6" type="text" placeholder="Telefone" /> <input
-				class="col s6 m6 l6" type="email" placeholder="E-mail" /> <input
-				class="col s6 m6 l6" type="text" placeholder="Resposável" /> <input
+				placeholder="Nome da  Instituição" name="nome"/> <input class="col s6 m6 l6"
+				type="text" placeholder="CNPJ" name="cnpj"/> <input class="col s6 m6 l6"
+				type="text" placeholder="Nível de curso" name="nivel" /> <input
+				class="col s6 m6 l6" type="text" placeholder="Endereço" name="endereco" /> <input
+				class="col s6 m6 l6" type="text" placeholder="Telefone" name="telefone" /> <input
+				class="col s6 m6 l6" type="email" placeholder="E-mail" name="email" /> <input
+				class="col s6 m6 l6" type="text" placeholder="Nome do Resposável" name="nomeResp" /> <input
 				class="col s6 m6 l6" type="text"
-				placeholder="Telefone do Responsável" /> <input class="col s6 m6 l6"
-				type="text" placeholder="E-mail do Responsável" />
+				placeholder="Telefone do Responsável" name="telefoneResp" /> <input class="col s6 m6 l6"
+				type="text" placeholder="E-mail do Responsável" name="emailResp" />
 			<div class="col s12 m12 l12">
-				<bottom type="submit" class="btn right">Enviar</bottom>
-				<bottom type="submit" class="btn">Limpar</bottom>
+				<input type="submit" class="btn right" value="Enviar" name="acao"/>
+				<input type="submit" class="btn" value="Limpar" name="acao" />
 			</div>
 		</form>
 	</div>

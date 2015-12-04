@@ -32,6 +32,12 @@
   	<description></description>
   	<servlet-class>servlet.paginas.IndexServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>NovaInstituicaoServlet</servlet-name>
+  	<display-name>NovaInstituicaoServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.paginas.NovaInstituicaoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>IndexServlet</servlet-name>
   	<url-pattern>/IndexServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NovaInstituicaoServlet</servlet-name>
+  	<url-pattern>/NovaInstituicaoServlet</url-pattern>
   </servlet-mapping>
 </web-app>
