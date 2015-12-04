@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet(value = "/principal")
+@WebServlet(value = "/cad-institucional")
 public class IndexServlet extends HttpServlet {
 
   protected void service(

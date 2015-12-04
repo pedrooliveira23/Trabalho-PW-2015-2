@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class SegurancaFilter
  */
 
-@WebFilter("/*")
+//@WebFilter("")
 public class SegurancaFilter implements Filter {
 
     /**
@@ -41,7 +41,7 @@ public class SegurancaFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 	    HttpServletResponse res = (HttpServletResponse) response;
 
-	    if (req.getRequestURI().endsWith("/sessao/login")) {
+	    if (req.getRequestURI().endsWith("/login")) {
 	      chain.doFilter(request, response); //Continua com a requisição.
 	    } else {
 	      //Referência para a sessão.
