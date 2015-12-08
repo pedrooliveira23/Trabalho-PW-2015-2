@@ -31,13 +31,13 @@
 				<ul id="slide-out" class="side-nav">
 					<li class="li-logo"><a href="/cad-institucional/"><img
 							class="logo-cad" src="/cad-institucional/Imagens/Logo.png" /></a></li>
-					<li><a href="/cad-institucional/pesquisar.jsp">Pesquisar</a></li>
+					<li><a href="pesquisar/">Pesquisar</a></li>
 				</ul>
 				<ul
 					class="side-nav fixed right hide-on-med-and-down light-blue darken-9">
 					<li class="li-logo"><a href="/cad-institucional"><img
 							class="logo-cad" src="/cad-institucional/Imagens/Logo.png" /></a></li>
-					<li><a href="/cad-institucional/pesquisar.jsp" class="grey-text text-darken-4">Pesquisar</a></li>
+					<li><a href="pesquisar/" class="grey-text text-darken-4">Pesquisar</a></li>
 				</ul>
 			</div>
 		</header>
