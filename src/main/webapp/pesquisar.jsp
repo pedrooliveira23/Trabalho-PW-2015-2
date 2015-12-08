@@ -51,6 +51,7 @@
 			</form>
 			<table>
 				<thead>
+					
 					<th>Nome</th>
 					<th>CNPJ</th>
 					<th>Nível de curso</th>
@@ -69,7 +70,8 @@
 
 						for (int i = 0; i < tabela.getInsts().size(); i++) {
 					%>
-					<tr>
+
+					<tr onclick="document.location = '#';" class="linhaTabela">
 						<td><%=tabela.getNomeInst(i)%></td>
 						<td><%=tabela.getCnpj(i)%></td>
 						<td><%=tabela.getNivel(i)%></td>
