@@ -51,17 +51,15 @@
 			</form>
 			<table>
 				<thead>
-					<th>
-					<td>Nome</td>
-					<td>CNPJ</td>
-					<td>Nível de curso</td>
-					<td>Endereço</td>
-					<td>Telefone</td>
-					<td>E-mail</td>
-					<td>Resposável</td>
-					<td>Telefone do Responsável</td>
-					<td>E-mail do Responsável</td>
-					</th>
+					<th>Nome</th>
+					<th>CNPJ</th>
+					<th>Nível de curso</th>
+					<th>Endereço</th>
+					<th>Telefone</th>
+					<th>E-mail</th>
+					<th>Resposável</th>
+					<th>Telefone do Responsável</th>
+					<th>E-mail do Responsável</th>
 				</thead>
 				<tbody>
 					<%
@@ -88,8 +86,8 @@
 				</tbody>
 			</table>
 			<div class="center-align">
-				<br> <a href="novaInstituicao">Adicionar
-					uma nova instituição...</a>
+				<br> <a href="novaInstituicao">Adicionar uma nova
+					instituição...</a>
 			</div>
 		</div>
 	</div>
