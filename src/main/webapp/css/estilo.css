@@ -1,24 +1,3 @@
-.login {
-	width: 200%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 1000;
-	position: fixed;
-	right: 0px;
-}
-
-.formLogin {
-	position: fixed;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 25%;
-}
-
-#falhaLogin {
-	color: red;
-	margin-top: 50px;
-}
-
 ::-webkit-input-placeholder {
 	color: #000;
 }
@@ -35,50 +14,21 @@
 	color: #000;
 }
 
-.logo-cad {
-	width: 100%;
-}
-
-.li-logo {
-	height: 180px;
-}
-
-.marca-dagua {
-	position: fixed;
-	width: 40%;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: -1;
-}
-
-.conteudo {
-	position: relative;
-	margin-left: 240px;
-}
-
-@media only screen and (max-width : 992px) {
-	.conteudo {
-		margin-left: auto;
-		top: 0;
-		transform: none;
-	}
-}
-
 .adicionar {
-	text-align:center;
+	text-align: center;
 }
 
 .setinha {
 	display: block;
-	padding:10px;
-	background-color:#03A9F4;
-	float:left;
+	padding: 10px;
+	background-color: #03A9F4;
+	float: left;
 	position: absolute;
 	top: 0px;
 }
 
 .setinha img {
-	width:100%;
+	width: 100%;
 }
 
 .setinha:hover {
@@ -86,10 +36,39 @@
 }
 
 .addInst input {
-	margin-left:0px !important;
+	margin-left: 0px !important;
 }
 
-.linhaTabela:hover{
-	background-color: rgba(0,0,0,0.5);
+.linhaTabela:hover {
+	background-color: rgba(0, 0, 0, 0.5);
 	cursor: pointer;
+}
+
+.side-nav li {
+	text-align: center;
+}
+
+header, main, footer {
+	padding-left: 240px !important;
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0 !important;
+	}
+}
+
+.brand-logo img {
+	width: 240px !important;
+	margin-left: -16px !important;
+}
+
+.brand-logo {
+	height: 240px !important;
+}
+
+.logo-cad {
+	width: 56px !important;
+	position:relative;
+	left: 30%;
 }
