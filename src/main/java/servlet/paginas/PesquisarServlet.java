@@ -38,7 +38,7 @@ public class PesquisarServlet extends HttpServlet {
 		    	insts = ((ArrayList<Instituicao>) sessao.getAttribute("insts"));
 		    }
 		    
-		    req.getRequestDispatcher("pesquisar/pesquisar.jsp").forward(req, resp);
+		    req.getRequestDispatcher("pesquisar.jsp").forward(req, resp);
 		  }
 
 }

@@ -5,9 +5,9 @@
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="../css/materialize.min.css"
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
 	media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="../css/estilo.css" />
+<link type="text/css" rel="stylesheet" href="css/estilo.css" />
 
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"
@@ -22,7 +22,7 @@
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="../js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script>
 		function logar() {
 			if (document.getElementById("userName").value == "teste"
@@ -34,7 +34,7 @@
 		}
 	</script>
 
-	<a href="../pesquisar/"><div class="setinha">
+	<a href="pesquisar"><div class="setinha">
 			<img src="/cad-institucional/Imagens/Left-100.png" />
 		</div> </a>
 
