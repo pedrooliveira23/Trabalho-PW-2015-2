@@ -39,7 +39,7 @@ Cadastrar Instituicao :
 
 ======================================================================================================================
 
-<b>Pagina de vizualizacao de instituicoes</b>
+<b>Pagina de vizualizacao de instituicoes (Apenas para a disciplina de Projeto de Software)</b>
 
 
  -Alterar<br>
