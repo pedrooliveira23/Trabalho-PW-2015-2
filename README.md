@@ -1,5 +1,7 @@
 # Trabalho-PW-2015-2
-Objetivo do trabalho: desenvolver uma aplicaçao web de cadastro de instituiçoes de ensino de habilitação técnica
+Descrição:
+
+O Sistema de Cadastro de Instituições de Ensino para os Conselhos Federais tem como objetivo auxiliar os Conselhos Federais, como o CREA, a possuir maior controle sobre quais instituições de ensino e seus cursos (Apenas para a matéria de Projeto de Software) possuem vinculo com estas, realizando as operações CRUD das instituições de ensino e os cursos (Apenas para a matéria de Projeto de Software) que cada uma destas possui.
 
 Framework: http://materializecss.com/
 
