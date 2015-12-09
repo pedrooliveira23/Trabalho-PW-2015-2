@@ -1,6 +1,12 @@
 package classe.core;
 
-public class Instituicao {
+import java.io.Serializable;
+
+public class Instituicao implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nome, nivelCurso, endereco, telefone, email,
 			nomeResponsavel, telefoneResponsavel, emailResponsavel, cnpj;
 	

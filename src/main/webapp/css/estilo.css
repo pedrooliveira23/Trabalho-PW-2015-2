@@ -27,16 +27,8 @@
 	top: 0px;
 }
 
-.setinha img {
-	width: 100%;
-}
-
-.setinha:hover {
-	background-color: #DDD;
-}
-
 .addInst input {
-	margin-left: 0px !important;
+	margin-left: 2px !important;
 }
 
 .linhaTabela:hover {
@@ -69,6 +61,5 @@ header, main, footer {
 
 .logo-cad {
 	width: 56px !important;
-	position:relative;
-	left: 30%;
+	height: 56px !important;
 }

@@ -12,9 +12,7 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"
 	charset="UTF-8" />
-<script>
-	$(".button-collapse").sideNav();
-</script>
+<title>CIE - Adicionar Nova Instituição</title>
 </head>
 
 <body class="grey lighten-4">
@@ -23,41 +21,51 @@
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	
 	<script>
-		function logar() {
-			if (document.getElementById("userName").value == "teste"
-					&& document.getElementById("userPassword").value == "teste") {
-				document.getElementsByClassName("login")[0].style.display = "none";
-			} else {
-				document.getElementById("falhaLogin").innerHTML = "Falha no Login! Veja se seu Nome de Usuário ou Senha estão incorretos.";
-			}
-		}
+		$(document).ready(function() {
+			$(".button-collapse").sideNav();
+		})
 	</script>
 
-	<a href="pesquisar"><div class="setinha">
-			<img src="/cad-institucional/Imagens/Left-100.png" />
-		</div> </a>
+	<div class="nav-wrapper side-nav fixed light-blue darken-9">
+		<a href="/cad-institucional" class="brand-logo"><img
+			src="/cad-institucional/Imagens/Logo.png" /></a>
+		<ul id="menu">
+			<li><a href="pesquisar">Pesquisar</a></li>
+		</ul>
+	</div>
+	<nav class="fixed light-blue darken-9 hide-on-large-only">
+		<div class="nav-wrapper">
+			<a href="/cad-institucional" class="center-align"><img
+				class="logo-cad brand-logo"
+				src="/cad-institucional/Imagens/Logo.png" /></a>
+			<ul id="menu">
+				<li><a href="pesquisar">Pesquisar</a></li>
+			</ul>
+		</div>
 
-	<div class="container row conteudo">
+	</nav>
+	<main class="container grey-text text-darken-4 row">
 		<h1>Adicionar Instituição</h1>
 		<form class="addInst">
-			<input class="col s6 m6 l6" type="text"
-				placeholder="Nome da  Instituição" name="nome"/> <input class="col s6 m6 l6"
-				type="text" placeholder="CNPJ" name="cnpj"/> <input class="col s6 m6 l6"
+			<input class="col s12 m5 l5" type="text"
+				placeholder="Nome da  Instituição" name="nome"/> <input class="col s12 m5 l5"
+				type="text" placeholder="CNPJ" name="cnpj"/> <input class="col s12 m5 l5"
 				type="text" placeholder="Nível de curso" name="nivel" /> <input
-				class="col s6 m6 l6" type="text" placeholder="Endereço" name="endereco" /> <input
-				class="col s6 m6 l6" type="text" placeholder="Telefone" name="telefone" /> <input
-				class="col s6 m6 l6" type="email" placeholder="E-mail" name="email" /> <input
-				class="col s6 m6 l6" type="text" placeholder="Nome do Resposável" name="nomeResp" /> <input
-				class="col s6 m6 l6" type="text"
-				placeholder="Telefone do Responsável" name="telefoneResp" /> <input class="col s6 m6 l6"
+				class="col s12 m5 l5" type="text" placeholder="Endereço" name="endereco" /> <input
+				class="col s12 m5 l5" type="text" placeholder="Telefone" name="telefone" /> <input
+				class="col s12 m5 l5" type="email" placeholder="E-mail" name="email" /> <input
+				class="col s12 m5 l5" type="text" placeholder="Nome do Resposável" name="nomeResp" /> <input
+				class="col s12 m5 l5" type="text"
+				placeholder="Telefone do Responsável" name="telefoneResp" /> <input class="col s12 m5 l5"
 				type="text" placeholder="E-mail do Responsável" name="emailResp" />
-			<div class="col s12 m12 l12">
+			<div class="col s12 m10 l10">
 				<input type="submit" class="btn right" value="Enviar" name="acao"/>
 				<input type="submit" class="btn" value="Limpar" name="acao" />
 			</div>
 		</form>
-	</div>
+	</main>
 
 </body>
 </html>

@@ -12,7 +12,8 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"
 	charset="UTF-8" />
-<title>Bem-Vindo ao CIE</title>
+<title>CIE - Bem-Vindo</title>
+
 </head>
 
 <body class="grey lighten-4">
@@ -23,26 +24,25 @@
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 
 	<script>
-		$(".button-collapse").sideNav();
+		$(document).ready(function() {
+			$(".button-collapse").sideNav();
+		})
 	</script>
 
-	<div
-		class="left nav-wrapper side-nav side-nav fixed right light-blue darken-9">
+	<div class="nav-wrapper side-nav fixed light-blue darken-9">
 		<a href="/cad-institucional" class="brand-logo"><img
 			src="/cad-institucional/Imagens/Logo.png" /></a>
 		<ul id="menu">
 			<li><a href="pesquisar">Pesquisar</a></li>
 		</ul>
-
 	</div>
-	<nav class="fixed hide-on-med-and-up light-blue darken-9">
+	<nav class="fixed light-blue darken-9 hide-on-large-only">
 		<div class="nav-wrapper">
 			<a href="/cad-institucional" class="center-align"><img
-				class="logo-cad" src="/cad-institucional/Imagens/Logo.png" /></a> <a
-				href="#" data-activates="menu" class="button-collapse"><i
-				class="material-icons">menu</i></a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="pesquisar" class="grey-text text-darken-4">Pesquisar</a></li>
+				class="logo-cad brand-logo"
+				src="/cad-institucional/Imagens/Logo.png" /></a>
+			<ul id="menu">
+				<li><a href="pesquisar">Pesquisar</a></li>
 			</ul>
 		</div>
 
