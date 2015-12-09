@@ -12,7 +12,7 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"
 	charset="UTF-8" />
-	<title>CIE - Pesquisar Instituições</title>
+<title>CIE - Pesquisar Instituições</title>
 </head>
 
 <body class="grey lighten-4">
@@ -52,44 +52,45 @@
 		<input type="text" name="pesquisa"
 			placeholder="Entre com algum dado da instituição" />
 	</form>
-	<table>
-		<thead>
+	<div class="row">
+		<table style="font-size: 9pt;" class="col s12">
+			<thead>
+				<th>Nome</th>
+				<th>CNPJ</th>
+				<th>Nível de curso</th>
+				<th>Endereço</th>
+				<th>Telefone</th>
+				<th>E-mail</th>
+				<th>Resposável</th>
+				<th>Telefone do Responsável</th>
+				<th>E-mail do Responsável</th>
+			</thead>
+			<tbody>
+				<%
+					classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
+							(java.util.ArrayList<classe.core.Instituicao>) session
+									.getAttribute("insts"));
 
-			<th>Nome</th>
-			<th>CNPJ</th>
-			<th>Nível de curso</th>
-			<th>Endereço</th>
-			<th>Telefone</th>
-			<th>E-mail</th>
-			<th>Resposável</th>
-			<th>Telefone do Responsável</th>
-			<th>E-mail do Responsável</th>
-		</thead>
-		<tbody>
-			<%
-				classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
-						(java.util.ArrayList<classe.core.Instituicao>) session
-								.getAttribute("insts"));
+					for (int i = 0; i < tabela.getInsts().size(); i++) {
+				%>
 
-				for (int i = 0; i < tabela.getInsts().size(); i++) {
-			%>
-
-			<tr onclick="document.location = '#';" class="linhaTabela">
-				<td><%=tabela.getNomeInst(i)%></td>
-				<td><%=tabela.getCnpj(i)%></td>
-				<td><%=tabela.getNivel(i)%></td>
-				<td><%=tabela.getEndereco(i)%></td>
-				<td><%=tabela.getTelefone(i)%></td>
-				<td><%=tabela.getEmail(i)%></td>
-				<td><%=tabela.getNomeResponsavel(i)%></td>
-				<td><%=tabela.getTelefoneResponsavel(i)%></td>
-				<td><%=tabela.getEmailResponsavel(i)%></td>
-			</tr>
-			<%
-				}
-			%>
-		</tbody>
-	</table>
+				<tr onclick="document.location = 'editarInstituicao';" class="linhaTabela">
+					<td><%=tabela.getNomeInst(i)%></td>
+					<td><%=tabela.getCnpj(i)%></td>
+					<td><%=tabela.getNivel(i)%></td>
+					<td><%=tabela.getEndereco(i)%></td>
+					<td><%=tabela.getTelefone(i)%></td>
+					<td><%=tabela.getEmail(i)%></td>
+					<td><%=tabela.getNomeResponsavel(i)%></td>
+					<td><%=tabela.getTelefoneResponsavel(i)%></td>
+					<td><%=tabela.getEmailResponsavel(i)%></td>
+				</tr>
+				<%
+					}
+				%>
+			</tbody>
+		</table>
+	</div>
 	<div class="center-align">
 		<br> <a href="novaInstituicao">Adicionar uma nova
 			instituição...</a>

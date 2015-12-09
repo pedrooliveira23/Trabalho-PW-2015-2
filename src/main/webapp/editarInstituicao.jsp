@@ -44,26 +44,29 @@
 				<li><a href="pesquisar">Pesquisar</a></li>
 			</ul>
 		</div>
-
 	</nav>
-	<main class="container grey-text text-darken-4">
-	<h1>Adicionar Instituição</h1>
-	<form class="addInst row">
-		<input class="col s6 m6 l6" type="text"
+	<main class="container grey-text text-darken-4 row"> <%
+					classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
+							(java.util.ArrayList<classe.core.Instituicao>) session
+									.getAttribute("insts"));
+				%>
+	<h1>Editar Instituição</h1>
+	<form class="addInst">
+		<input class="col s12 m5 l5" type="text"
 			placeholder="Nome da  Instituição" name="nome" /> <input
-			class="col s6 m6 l6" type="text" placeholder="CNPJ" name="cnpj" /> <input
-			class="col s6 m6 l6" type="text" placeholder="Nível de curso"
-			name="nivel" /> <input class="col s6 m6 l6" type="text"
+			class="col s12 m5 l5" type="text" placeholder="CNPJ" name="cnpj" />
+		<input class="col s12 m5 l5" type="text" placeholder="Nível de curso"
+			name="nivel" /> <input class="col s12 m5 l5" type="text"
 			placeholder="Endereço" name="endereco" /> <input
-			class="col s6 m6 l6" type="text" placeholder="Telefone"
-			name="telefone" /> <input class="col s6 m6 l6" type="email"
-			placeholder="E-mail" name="email" /> <input class="col s6 m6 l6"
+			class="col s12 m5 l5" type="text" placeholder="Telefone"
+			name="telefone" /> <input class="col s12 m5 l5" type="email"
+			placeholder="E-mail" name="email" /> <input class="col s12 m5 l5"
 			type="text" placeholder="Nome do Resposável" name="nomeResp" /> <input
-			class="col s6 m6 l6" type="text"
+			class="col s12 m5 l5" type="text"
 			placeholder="Telefone do Responsável" name="telefoneResp" /> <input
-			class="col s6 m6 l6" type="text" placeholder="E-mail do Responsável"
+			class="col s12 m5 l5" type="text" placeholder="E-mail do Responsável"
 			name="emailResp" />
-		<div class="col s12 m12 l12">
+		<div class="col s12 m10 l10">
 			<input type="submit" class="btn right" value="Enviar" name="acao" />
 			<input type="submit" class="btn" value="Limpar" name="acao" />
 		</div>
