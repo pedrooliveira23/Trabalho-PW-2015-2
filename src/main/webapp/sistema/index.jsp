@@ -30,7 +30,7 @@
 	</script>
 
 	<div class="nav-wrapper side-nav fixed light-blue darken-9">
-		<a href="bemvindo" class="brand-logo"><img
+		<a href="sistema" class="brand-logo"><img
 			src="Imagens/Logo.png" /></a>
 		<ul id="menu">
 			<li><a  class="white-text" href="pesquisar">Pesquisar</a></li>
@@ -39,7 +39,7 @@
 	</div>
 	<nav class="fixed light-blue darken-9 hide-on-large-only">
 		<div class="nav-wrapper">
-			<a href="bemvindo" class="center-align"><img
+			<a href="sistema" class="center-align"><img
 				class="logo-cad brand-logo"
 				src="Imagens/Logo.png" /></a>
 			<ul id="menu">

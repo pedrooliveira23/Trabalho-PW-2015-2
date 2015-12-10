@@ -29,7 +29,7 @@
 	</script>
 
 	<div class="nav-wrapper side-nav fixed light-blue darken-9">
-		<a href="bemvindo" class="brand-logo"><img src="Imagens/Logo.png" /></a>
+		<a href="sistema" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<ul id="menu">
 			<li><a class="white-text" href="pesquisar">Pesquisar</a></li>
 			<li class="logout"><a class="white-text" href="logout">Logout</a></li>
@@ -37,7 +37,7 @@
 	</div>
 	<nav class="fixed light-blue darken-9 hide-on-large-only">
 		<div class="nav-wrapper">
-			<a href="bemvindo" class="center-align"><img
+			<a href="sistema" class="center-align"><img
 				class="logo-cad brand-logo" src="Imagens/Logo.png" /></a>
 			<ul id="menu">
 				<li class="right"><a href="pesquisar">Pesquisar</a></li>
@@ -54,24 +54,24 @@
 	<form class="addInst">
 		<input class="col s12 m5 l5" type="text"
 			placeholder="Nome da  Instituição" name="nome"
-			value="<%=request.getParameter("nome")%>" /> <input
+			value="<%=request.getParameter("nome")%>" disabled="disabled"/> <input
 			class="col s12 m5 l5" type="text" placeholder="CNPJ" name="cnpj"
-			value="<%=request.getParameter("cnpj")%>"/> <input
+			value="<%=request.getParameter("cnpj")%>" disabled="disabled"/> <input
 			class="col s12 m5 l5" type="text" placeholder="Nível de curso"
-			name="nivel" value="<%=request.getParameter("nivel")%>" /> <input class="col s12 m5 l5" type="text"
+			name="nivel" value="<%=request.getParameter("nivel")%>" disabled="disabled"/> <input class="col s12 m5 l5" type="text"
 			placeholder="Endereço" name="endereco"
-			value="<%=request.getParameter("endereco")%>" /> <input
+			value="<%=request.getParameter("endereco")%>" disabled="disabled"/> <input
 			class="col s12 m5 l5" type="text" placeholder="Telefone"
-			name="telefone" value="<%=request.getParameter("telefone")%>"  /> <input class="col s12 m5 l5" type="email"
+			name="telefone" value="<%=request.getParameter("telefone")%>" disabled="disabled"/> <input class="col s12 m5 l5" type="email"
 			placeholder="E-mail" name="email"
-			value="<%=request.getParameter("email")%>" /> <input
+			value="<%=request.getParameter("email")%>" disabled="disabled"/> <input
 			class="col s12 m5 l5" type="text" placeholder="Nome do Resposável"
-			name="nomeResp" value="<%=request.getParameter("nomeResp")%>" /> <input
+			name="nomeResp" value="<%=request.getParameter("nomeResp")%>" disabled="disabled"/> <input
 			class="col s12 m5 l5" type="text"
 			placeholder="Telefone do Responsável" name="telefoneResp"
-			value="<%=request.getParameter("telefoneResp")%>" /> <input
+			value="<%=request.getParameter("telefoneResp")%>" disabled="disabled"/> <input
 			class="col s12 m5 l5" type="text" placeholder="E-mail do Responsável"
-			name="emailResp" value="<%=request.getParameter("emailResp")%>" />
+			name="emailResp" value="<%=request.getParameter("emailResp")%>" disabled="disabled"/>
 		<div class="col s12 m10 l10">
 			<input type="submit" class="btn right" value="Editar"
 				name="acao" onclick="editar()" /> <input type="submit" class="btn"

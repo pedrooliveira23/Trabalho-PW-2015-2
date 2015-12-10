@@ -26,15 +26,6 @@ public class IndexServlet extends HttpServlet {
     //Referência para a sessão.
     HttpSession sessao = req.getSession();
 
-    ArrayList<Instituicao> insts;
-    
-    if(sessao.getAttribute("insts") == null) {
-    	insts = new ArrayList<Instituicao>();
-    	sessao.setAttribute("insts", insts);
-    } else {
-    	insts = (ArrayList<Instituicao>) sessao.getAttribute("insts");
-    }
-    
     //Obtém referência para o atributo "usuarioLogado".
     Boolean usuarioLogado = (Boolean) sessao.getAttribute("usuarioLogado");
     

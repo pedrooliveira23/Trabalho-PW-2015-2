@@ -27,39 +27,33 @@ public class PesquisarServlet extends HttpServlet {
 		// Referência para a sessão.
 		HttpSession sessao = req.getSession();
 
-		ArrayList<Instituicao> insts;
+		ArrayList<Instituicao> insts = new ArrayList<Instituicao>();
 
-		if (sessao.getAttribute("insts") == null) {
-			insts = new ArrayList<Instituicao>();
+		Instituicao ins = new Instituicao();
+		ins.setCnpj("01567601/0001-43");
+		ins.setEmail("contato@ufg.br");
+		ins.setEmailResponsavel("walison@inf.ufg.br");
+		ins.setEndereco("Avenida Esperança s/n, Campus Samambaia - Prédio da Reitoria. CEP 74690-900");
+		ins.setNivelCurso("Superior");
+		ins.setNome("Universidade Federal de Goiás - Goiânia");
+		ins.setNomeResponsavel("Walison Cavalcanti Moreira");
+		ins.setTelefone("(62) 3521-1000");
+		ins.setTelefoneResponsavel("(62) 3521-1181");
+		insts.add(ins);
 
-			Instituicao ins = new Instituicao();
-			ins.setCnpj("0000");
-			ins.setEmail("asdasd");
-			ins.setEmailResponsavel("sadjsaoda");
-			ins.setEndereco("sadasda");
-			ins.setNivelCurso("asdasd");
-			ins.setNome("asdasd");
-			ins.setNomeResponsavel("asdas");
-			ins.setTelefone("asdasd");
-			ins.setTelefoneResponsavel("asdas");
-			insts.add(ins);
+		Instituicao ins2 = new Instituicao();
+		ins2.setCnpj("01567601/0001-43");
+		ins2.setEmail("catalao@ufg.br");
+		ins2.setEmailResponsavel("walison@ufg.br");
+		ins2.setEndereco("Av. Dr. Lamartine Pinto de Avelar, 1120, Setor Universitário - CEP 75704-020");
+		ins2.setNivelCurso("Superior");
+		ins2.setNome("Universidade Federal de Goiás - Catalão");
+		ins2.setNomeResponsavel("Walison Cavalcanti Moreira");
+		ins2.setTelefone("(64) 3441-5300");
+		ins2.setTelefoneResponsavel("(62) 3521-1181");
+		insts.add(ins2);
 
-			Instituicao ins2 = new Instituicao();
-			ins2.setCnpj("222222222");
-			ins2.setEmail("eeeeeeeeeee");
-			ins2.setEmailResponsavel("rrrrrrrrrrrrr");
-			ins2.setEndereco("endddddddd");
-			ins2.setNivelCurso("nnnnnnnn");
-			ins2.setNome("nommmmmmmm");
-			ins2.setNomeResponsavel("norrrrrrrrr");
-			ins2.setTelefone("teeeeeeeeeel");
-			ins2.setTelefoneResponsavel("relrrrrrrrrrr");
-			insts.add(ins2);
-
-			sessao.setAttribute("insts", insts);
-		} else {
-			insts = ((ArrayList<Instituicao>) sessao.getAttribute("insts"));
-		}
+		sessao.setAttribute("insts", insts);
 
 		String paramPesquisa = req.getParameter("pesquisa");
 		String pesquisa = paramPesquisa == null ? "" : paramPesquisa;
