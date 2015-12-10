@@ -44,6 +44,12 @@
   	<description></description>
   	<servlet-class>servlet.paginas.PesquisarServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RedirServlet</servlet-name>
+  	<display-name>RedirServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.paginas.RedirServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
@@ -63,5 +69,9 @@
   <servlet-mapping>
   	<servlet-name>PesquisarServlet</servlet-name>
   	<url-pattern>/PesquisarServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RedirServlet</servlet-name>
+  	<url-pattern>/RedirServlet</url-pattern>
   </servlet-mapping>
 </web-app>

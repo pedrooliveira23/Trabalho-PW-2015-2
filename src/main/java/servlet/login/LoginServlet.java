@@ -23,8 +23,8 @@ public class LoginServlet extends HttpServlet {
     String usuario = req.getParameter("usuario");
     String senha = req.getParameter("senha");
     //Usuário válido.
-    if (usuario != null && usuario.equals("joao")
-        && senha!= null && senha.equals("123")) {
+    if (usuario != null && usuario.equals("admin")
+        && senha!= null && senha.equals("admin")) {
       sessao.setAttribute("usuarioLogado", true);
       resp.sendRedirect("sistema");
     } else {
