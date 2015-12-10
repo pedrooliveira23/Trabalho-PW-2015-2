@@ -14,10 +14,6 @@
   	<filter-name>SegurancaFilter</filter-name>
   	<url-pattern>/SegurancaFilter</url-pattern>
   </filter-mapping>
-  <filter-mapping>
-  	<filter-name>redirecionadorFilter</filter-name>
-  	<url-pattern>/redirecionadorFilter</url-pattern>
-  </filter-mapping>
   <servlet>
   	<servlet-name>LoginServlet</servlet-name>
   	<display-name>LoginServlet</display-name>
