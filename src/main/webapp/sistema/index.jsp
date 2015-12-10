@@ -14,6 +14,14 @@
 	charset="UTF-8" />
 <title>CIE - Bem-Vindo</title>
 
+<style type="text/css">
+
+p {
+text-align: justify;
+}
+
+</style>
+
 </head>
 
 <body class="grey lighten-4">
@@ -50,15 +58,18 @@
 	</nav>
 	<main class="container grey-text text-darken-4">
 	<h1>Bem-Vindo</h1>
-	<p>Suco de cevadiss, Ã© um leite divinis, qui tem lupuliz, matis,
-		aguis e fermentis. Interagi no mÃ©, cursus quis, vehicula ac nisi.
-		Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut
-		mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh
-		ullamcorper. Pharetra in mattis molestie, volutpat elementum justo.
-		Aenean ut ante turpis. Pellentesque laoreet mÃ© vel lectus scelerisque
-		interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur
-		adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean
-		justo massa.</p>
+	<p>O cadastro das instituições de ensino e cursos nos Conselhos
+		Regionais tem como objetivo informar em processos de registro quais os
+		títulos e atribuições a serem concedidos aos egressos. No processo de
+		registro profissional é consultado se a instituição e curso do egresso
+		estão cadastrados no Conselho, caso estejam, é inserido no processo as
+		informações (um PDF da página do cadastro do curso) e após são
+		definidos o título e atribuições a serem concedidos ao egresso. Caso o
+		curso ou instituição não estejam cadastrados, o egresso deve solicitar
+		junto a instituição os documentos necessários para a regularização do
+		curso/instituição. A aplicação proposta será utilizada para cadastrar
+		cursos e instituições e servir como sistema de pesquisa dos dados
+		cadastrados.</p>
 	</main>
 </body>
 </html>
