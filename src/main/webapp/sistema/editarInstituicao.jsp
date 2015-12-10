@@ -25,7 +25,7 @@
 	<script>
 		$(document).ready(function() {
 			$(".button-collapse").sideNav();
-		})
+		});
 	</script>
 
 	<div class="nav-wrapper side-nav fixed light-blue darken-9">
@@ -53,22 +53,29 @@
 	<h1>Editar Instituição</h1>
 	<form class="addInst">
 		<input class="col s12 m5 l5" type="text"
-			placeholder="Nome da  Instituição" name="nome" /> <input
-			class="col s12 m5 l5" type="text" placeholder="CNPJ" name="cnpj" />
-		<input class="col s12 m5 l5" type="text" placeholder="Nível de curso"
-			name="nivel" /> <input class="col s12 m5 l5" type="text"
-			placeholder="Endereço" name="endereco" /> <input
+			placeholder="Nome da  Instituição" name="nome"
+			value="<%=request.getParameter("nome")%>" /> <input
+			class="col s12 m5 l5" type="text" placeholder="CNPJ" name="cnpj"
+			value="<%=request.getParameter("cnpj")%>"/> <input
+			class="col s12 m5 l5" type="text" placeholder="Nível de curso"
+			name="nivel" value="<%=request.getParameter("nivel")%>" /> <input class="col s12 m5 l5" type="text"
+			placeholder="Endereço" name="endereco"
+			value="<%=request.getParameter("endereco")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="Telefone"
-			name="telefone" /> <input class="col s12 m5 l5" type="email"
-			placeholder="E-mail" name="email" /> <input class="col s12 m5 l5"
-			type="text" placeholder="Nome do Resposável" name="nomeResp" /> <input
+			name="telefone" value="<%=request.getParameter("telefone")%>"  /> <input class="col s12 m5 l5" type="email"
+			placeholder="E-mail" name="email"
+			value="<%=request.getParameter("email")%>" /> <input
+			class="col s12 m5 l5" type="text" placeholder="Nome do Resposável"
+			name="nomeResp" value="<%=request.getParameter("nomeResp")%>" /> <input
 			class="col s12 m5 l5" type="text"
-			placeholder="Telefone do Responsável" name="telefoneResp" /> <input
+			placeholder="Telefone do Responsável" name="telefoneResp"
+			value="<%=request.getParameter("telefoneResp")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="E-mail do Responsável"
-			name="emailResp" />
+			name="emailResp" value="<%=request.getParameter("emailResp")%>" />
 		<div class="col s12 m10 l10">
-			<input type="submit" class="btn right" value="Enviar" name="acao" />
-			<input type="submit" class="btn" value="Limpar" name="acao" />
+			<input type="submit" class="btn right" value="Editar"
+				name="acao" onclick="editar()" /> <input type="submit" class="btn"
+				value="Excluir" name="acao" />
 		</div>
 	</form>
 	</main>

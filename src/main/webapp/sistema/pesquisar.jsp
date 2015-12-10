@@ -23,24 +23,23 @@
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 
 	<script>
-		$(document).ready(function() {
-			$(".button-collapse").sideNav();
-		})
+		$(document)
+				.ready(function() {
+					$(".button-collapse").sideNav();
+				})
 	</script>
 
 	<div class="nav-wrapper side-nav fixed light-blue darken-9">
-		<a href="bemvindo" class="brand-logo"><img
-			src="Imagens/Logo.png" /></a>
+		<a href="bemvindo" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<ul id="menu">
-			<li><a  class="white-text" href="pesquisar">Pesquisar</a></li>
+			<li><a class="white-text" href="pesquisar">Pesquisar</a></li>
 			<li class="logout"><a class="white-text" href="logout">Logout</a></li>
 		</ul>
 	</div>
 	<nav class="fixed light-blue darken-9 hide-on-large-only">
 		<div class="nav-wrapper">
 			<a href="bemvindo" class="center-align"><img
-				class="logo-cad brand-logo"
-				src="Imagens/Logo.png" /></a>
+				class="logo-cad brand-logo" src="Imagens/Logo.png" /></a>
 			<ul id="menu">
 				<li class="right"><a href="pesquisar">Pesquisar</a></li>
 				<li><a href="logout">Logout</a></li>
@@ -58,13 +57,7 @@
 			<thead>
 				<th>Nome</th>
 				<th>CNPJ</th>
-				<th>Nível de curso</th>
-				<th>Endereço</th>
 				<th>Telefone</th>
-				<th>E-mail</th>
-				<th>Resposável</th>
-				<th>Telefone do Responsável</th>
-				<th>E-mail do Responsável</th>
 			</thead>
 			<tbody>
 				<%
@@ -75,16 +68,12 @@
 					for (int i = 0; i < tabela.getInsts().size(); i++) {
 				%>
 
-				<tr onclick="document.location = 'editarInstituicao';" class="linhaTabela">
+				<tr
+					onclick="document.location = 'editarInstituicao?nome=<%=tabela.getNomeInst(i)%>&cnpj=<%=tabela.getCnpj(i)%>&telefone=<%=tabela.getTelefone(i)%>&endereco=<%=tabela.getEndereco(i)%>&nivel=<%=tabela.getNivel(i)%>&email=<%=tabela.getEmail(i)%>&nomeResp=<%=tabela.getNomeResponsavel(i)%>&telefoneResp=<%=tabela.getTelefoneResponsavel(i)%>&emailResp=<%=tabela.getEmailResponsavel(i)%>';"
+					class="linhaTabela">
 					<td><%=tabela.getNomeInst(i)%></td>
 					<td><%=tabela.getCnpj(i)%></td>
-					<td><%=tabela.getNivel(i)%></td>
-					<td><%=tabela.getEndereco(i)%></td>
 					<td><%=tabela.getTelefone(i)%></td>
-					<td><%=tabela.getEmail(i)%></td>
-					<td><%=tabela.getNomeResponsavel(i)%></td>
-					<td><%=tabela.getTelefoneResponsavel(i)%></td>
-					<td><%=tabela.getEmailResponsavel(i)%></td>
 				</tr>
 				<%
 					}
@@ -93,8 +82,7 @@
 		</table>
 	</div>
 	<div class="center-align">
-		<br> <a href="novaInstituicao">Adicionar uma nova
-			instituição...</a>
+		<a href="novaInstituicao">Adicionar uma nova instituição...</a>
 	</div>
 	</main>
 </body>

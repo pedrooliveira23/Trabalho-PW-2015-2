@@ -19,13 +19,13 @@ import classe.core.Instituicao;
 @WebServlet(value = "/editarInstituicao")
 public class EditarInstituicaoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
 		// Referência para a sessão.
 		HttpSession sessao = req.getSession();
-		
+
 		ArrayList<Instituicao> insts;
 
 		if (sessao.getAttribute("insts") == null) {
@@ -34,9 +34,42 @@ public class EditarInstituicaoServlet extends HttpServlet {
 		} else {
 			insts = ((ArrayList<Instituicao>) sessao.getAttribute("insts"));
 		}
-		
-		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req, resp);
-		
+
+		String paramEditar = req.getParameter("acao") == null ? "" : req
+				.getParameter("acao");
+
+		if (req.getParameter("cnpj") != null && paramEditar.equals("Enviar")) {
+			for (int i = 0; i < insts.size(); i++) {
+				if (insts.get(i).getCnpj().equals(req.getParameter("cnpj"))) {
+					insts.get(i).setEmail(req.getParameter("email"));
+					insts.get(i).setEmailResponsavel(
+							req.getParameter("emailResp"));
+					insts.get(i).setEndereco(req.getParameter("endereco"));
+					insts.get(i).setNivelCurso(req.getParameter("nivel"));
+					insts.get(i).setNome(req.getParameter("nome"));
+					insts.get(i).setNomeResponsavel(
+							req.getParameter("nomeResp"));
+					insts.get(i).setTelefone(req.getParameter("telefone"));
+					insts.get(i).setTelefoneResponsavel(
+							req.getParameter("telefoneResp"));
+					sessao.setAttribute("insts", insts);
+				}
+			}
+		} else if (req.getParameter("cnpj") != null
+				&& paramEditar.equals("Excluir")) {
+			for (int i = 0; i < insts.size(); i++) {
+				if (insts.get(i).getCnpj().equals(req.getParameter("cnpj"))) {
+					insts.remove(i);
+					sessao.setAttribute("insts", insts);
+					req.getRequestDispatcher("sistema/pesquisar.jsp").forward(
+							req, resp);
+				}
+			}
+		}
+
+		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req,
+				resp);
+
 	}
 
 }
