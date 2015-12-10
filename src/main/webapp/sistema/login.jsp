@@ -22,12 +22,14 @@
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<div class="container row center-align">
-	<form class="col s4 offset-s4">
+	<div class="center">
+	<form class="centralizar">
 		<a href="bemvindo" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<input type="text" placeholder="Nome de Usuário" name="usuario" /> <input
 			type="password" placeholder="Senha" name="senha" /> <input class="btn" type="submit"
 			value="Entrar" />
+			
+			<div><br><%=(String)request.getAttribute("erro")%></div>
 	</form>
 	</div>
 </body>

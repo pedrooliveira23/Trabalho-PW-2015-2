@@ -63,3 +63,39 @@ header, main, footer {
 	width: 56px !important;
 	height: 56px !important;
 }
+
+.centralizar {
+	width: 50% !important;
+	height: 50% !important;
+	margin: auto !important;
+}
+
+.centralizar input {
+	width: 50% !important;
+}
+
+@media only screen and (max-width : 992px) {
+	.centralizar {
+		width: 50% !important;
+		height: 50% !important;
+		margin: 25% auto !important;
+	}
+	.centralizar input {
+		width: 100% !important;
+	}
+}
+
+.centralizar a img {
+	width: 50% !important;
+	margin: auto !important;
+}
+
+.logout {
+	position: absolute;
+	bottom: 0px;
+	width: 240px;
+}
+
+li {
+	font-weight: bold !important;
+}

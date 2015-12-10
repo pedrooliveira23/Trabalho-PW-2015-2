@@ -33,7 +33,8 @@
 		<a href="bemvindo" class="brand-logo"><img
 			src="Imagens/Logo.png" /></a>
 		<ul id="menu">
-			<li><a href="pesquisar">Pesquisar</a></li>
+			<li><a  class="white-text" href="pesquisar">Pesquisar</a></li>
+			<li class="logout"><a class="white-text" href="logout">Logout</a></li>
 		</ul>
 	</div>
 	<nav class="fixed light-blue darken-9 hide-on-large-only">
@@ -42,10 +43,10 @@
 				class="logo-cad brand-logo"
 				src="Imagens/Logo.png" /></a>
 			<ul id="menu">
-				<li><a href="pesquisar">Pesquisar</a></li>
+				<li class="right"><a href="pesquisar">Pesquisar</a></li>
+				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div>
-
 	</nav>
 	<main class="container grey-text text-darken-4">
 	<h1>Bem-Vindo</h1>

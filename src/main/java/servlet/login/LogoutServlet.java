@@ -21,9 +21,9 @@ public class LogoutServlet extends HttpServlet {
       throws ServletException, IOException {
 
     //Referência para a sessão.
-    HttpSession sessao = req.getSession();
+    HttpSession sessaolog = req.getSession();
     //Remove todos os objetos da sessão e a invalida.
-    sessao.invalidate();
+    sessaolog.invalidate();
 
     resp.sendRedirect("login");
   }

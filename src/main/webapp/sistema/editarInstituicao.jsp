@@ -29,27 +29,27 @@
 	</script>
 
 	<div class="nav-wrapper side-nav fixed light-blue darken-9">
-		<a href="/cad-institucional" class="brand-logo"><img
-			src="/cad-institucional/Imagens/Logo.png" /></a>
+		<a href="bemvindo" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<ul id="menu">
-			<li><a href="pesquisar">Pesquisar</a></li>
+			<li><a class="white-text" href="pesquisar">Pesquisar</a></li>
+			<li class="logout"><a class="white-text" href="logout">Logout</a></li>
 		</ul>
 	</div>
 	<nav class="fixed light-blue darken-9 hide-on-large-only">
 		<div class="nav-wrapper">
-			<a href="/cad-institucional" class="center-align"><img
-				class="logo-cad brand-logo"
-				src="/cad-institucional/Imagens/Logo.png" /></a>
+			<a href="bemvindo" class="center-align"><img
+				class="logo-cad brand-logo" src="Imagens/Logo.png" /></a>
 			<ul id="menu">
-				<li><a href="pesquisar">Pesquisar</a></li>
+				<li class="right"><a href="pesquisar">Pesquisar</a></li>
+				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div>
 	</nav>
 	<main class="container grey-text text-darken-4 row"> <%
-					classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
-							(java.util.ArrayList<classe.core.Instituicao>) session
-									.getAttribute("insts"));
-				%>
+ 	classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
+ 			(java.util.ArrayList<classe.core.Instituicao>) session
+ 					.getAttribute("insts"));
+ %>
 	<h1>Editar Instituição</h1>
 	<form class="addInst">
 		<input class="col s12 m5 l5" type="text"
