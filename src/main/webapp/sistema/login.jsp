@@ -24,7 +24,7 @@
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<div class="center">
 	<form class="centralizar">
-		<a href="bemvindo" class="brand-logo"><img src="Imagens/Logo.png" /></a>
+		<a href="sistema" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<input type="text" placeholder="Nome de Usuário" name="usuario" /> <input
 			type="password" placeholder="Senha" name="senha" /> <input class="btn" type="submit"
 			value="Entrar" />
