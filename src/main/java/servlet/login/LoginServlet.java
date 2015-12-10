@@ -9,31 +9,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class LoginServlet
- */
-
 @WebServlet(value = "/login")
-public class LoginServlet {
-	private static final long serialVersionUID = 1L;
+public class LoginServlet extends HttpServlet {
 
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+  protected void service(
+      HttpServletRequest req,
+      HttpServletResponse resp)
+      throws ServletException, IOException {
 
-		// Referência para a sessão.
-		HttpSession sessao = req.getSession();
+    //Referência para a sessão.
+    HttpSession sessao = req.getSession();
 
-		String usuario = req.getParameter("usuario");
-		String senha = req.getParameter("senha");
-		// Usuário válido.
-		if (usuario != null && usuario.equals("joao") && senha != null
-				&& senha.equals("123")) {
-			sessao.setAttribute("usuarioLogado", true);
-			resp.sendRedirect("principal");
-		} else {
-			sessao.setAttribute("usuarioLogado", false);
-			req.getRequestDispatcher("login.jsp").forward(req, resp);
-		}
-	}
+    String usuario = req.getParameter("usuario");
+    String senha = req.getParameter("senha");
+    //Usuário válido.
+    if (usuario != null && usuario.equals("joao")
+        && senha!= null && senha.equals("123")) {
+      sessao.setAttribute("usuarioLogado", true);
+      resp.sendRedirect("sistema");
+    } else {
+      sessao.setAttribute("usuarioLogado", false);
+      req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);
+    }
+  }
 
 }

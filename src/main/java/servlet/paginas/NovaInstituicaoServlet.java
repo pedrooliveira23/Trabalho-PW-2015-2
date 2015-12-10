@@ -22,7 +22,7 @@ public class NovaInstituicaoServlet extends HttpServlet {
 
 		// Referência para a sessão.
 		HttpSession sessao = req.getSession();
-		req.getRequestDispatcher("novaInstituicao.jsp").forward(req, resp);
+		req.getRequestDispatcher("sistema/novaInstituicao.jsp").forward(req, resp);
 		
 	}
 

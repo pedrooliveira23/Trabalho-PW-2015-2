@@ -35,7 +35,7 @@ public class EditarInstituicaoServlet extends HttpServlet {
 			insts = ((ArrayList<Instituicao>) sessao.getAttribute("insts"));
 		}
 		
-		req.getRequestDispatcher("editarInstituicao.jsp").forward(req, resp);
+		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req, resp);
 		
 	}
 

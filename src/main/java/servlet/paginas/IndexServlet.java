@@ -15,7 +15,7 @@ import classe.core.Instituicao;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet(value = "/cad-institucional")
+@WebServlet(value = "/sistema")
 public class IndexServlet extends HttpServlet {
 
   protected void service(
@@ -39,9 +39,9 @@ public class IndexServlet extends HttpServlet {
     Boolean usuarioLogado = (Boolean) sessao.getAttribute("usuarioLogado");
     
     if (usuarioLogado == null || usuarioLogado == false) {
-      req.getRequestDispatcher("login.jsp").forward(req, resp);  
+      req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);  
     } else {
-      req.getRequestDispatcher("index.jsp").forward(req, resp);
+      req.getRequestDispatcher("sistema/index.jsp").forward(req, resp);
     }
   }
 

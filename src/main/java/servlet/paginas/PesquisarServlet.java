@@ -89,7 +89,7 @@ public class PesquisarServlet extends HttpServlet {
 			sessao.setAttribute("insts", instsPesquisa);
 		}
 
-		req.getRequestDispatcher("pesquisar.jsp").forward(req, resp);
+		req.getRequestDispatcher("sistema/pesquisar.jsp").forward(req, resp);
 	}
 
 }
