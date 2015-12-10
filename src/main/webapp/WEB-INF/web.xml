@@ -10,12 +10,6 @@
   	<description></description>
   	<filter-class>servlet.login.SegurancaFilter</filter-class>
   </filter>
-  <filter>
-  	<filter-name>redirecionadorFilter</filter-name>
-  	<display-name>redirecionadorFilter</display-name>
-  	<description></description>
-  	<filter-class>servlet.login.redirecionadorFilter</filter-class>
-  </filter>
   <filter-mapping>
   	<filter-name>SegurancaFilter</filter-name>
   	<url-pattern>/SegurancaFilter</url-pattern>
