@@ -92,7 +92,7 @@ header, main, footer {
 
 .logout {
 	position: absolute;
-	bottom: 0px;
+	bottom: 64px;
 	width: 240px;
 }
 

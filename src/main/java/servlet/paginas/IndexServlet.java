@@ -32,7 +32,7 @@ public class IndexServlet extends HttpServlet {
     if (usuarioLogado == null || usuarioLogado == false) {
       req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);  
     } else {
-      req.getRequestDispatcher("sistema/index.jsp").forward(req, resp);
+      req.getRequestDispatcher("sistema/pesquisar.jsp").forward(req, resp);
     }
   }
 

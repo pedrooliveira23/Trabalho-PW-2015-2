@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classe.core.Instituicao;
+import classe.core.LoginDao;
 
 @WebServlet(value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -20,32 +21,17 @@ public class LoginServlet extends HttpServlet {
 
 		// Referência para a sessão.
 		HttpSession sessaolog = req.getSession();
-		
-		ArrayList<Instituicao> insts;
-	    
-	    if(sessaolog.getAttribute("insts") == null) {
-	    	insts = new ArrayList<Instituicao>();
-	    	sessaolog.setAttribute("insts", insts);
-	    } else {
-	    	insts = (ArrayList<Instituicao>) sessaolog.getAttribute("insts");
-	    }
 
 		String usuario = req.getParameter("usuario");
 		String senha = req.getParameter("senha");
-		// Usuário válido.
-		String erro = " ";
-
-		req.setAttribute("erro", erro);
-		if (usuario != null && usuario.equals("admin") && senha != null
-				&& senha.equals("admin")) {
+		
+		LoginDao loginDao = new LoginDao();		
+		
+		if (loginDao.validar(usuario, senha)) {
 			sessaolog.setAttribute("usuarioLogado", true);
 			resp.sendRedirect("sistema");
-			erro = " ";
-			req.setAttribute("erro", erro);
 		} else {
 			sessaolog.setAttribute("usuarioLogado", false);
-			erro = "Nome de Usuário ou Senha incorretos!";
-			req.setAttribute("erro", erro);
 			req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);
 		}
 	}
