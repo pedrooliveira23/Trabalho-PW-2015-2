@@ -14,7 +14,7 @@ public class InstituicaoDao implements InterfaceDaoInstituicao {
 	private String url = "jdbc:derby:cie;create=true";
 	private Connection conn;
 
-	InstituicaoDao() throws SQLException {
+	public InstituicaoDao() throws SQLException {
 		try {
 			conn = DriverManager.getConnection(url);
 		} catch (SQLException e) {
@@ -98,7 +98,7 @@ public class InstituicaoDao implements InterfaceDaoInstituicao {
 		return instituicoes;
 	}
 
-	public List<Instituicao> listar(String dadoCadastral) throws SQLException {
+	public List<Instituicao> listar() throws SQLException {
 		List<Instituicao> instituicoes = new ArrayList<Instituicao>();
 		String sql = "select * from instituicoes order by nome";
 		PreparedStatement prepareStatement = conn.prepareStatement(sql);

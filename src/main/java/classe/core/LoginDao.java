@@ -14,9 +14,7 @@ public class LoginDao {
 		try {
 			conn = DriverManager.getConnection(url);
 			String sql = "select * from contas";
-			// Obtém referência para uma sentença SQL.
 			PreparedStatement prepareStatement = conn.prepareStatement(sql);
-			// Executa a instrução SQL.
 			ResultSet rs = prepareStatement.executeQuery();
 			while (rs.next()) {
 				if (nomeDeUsuario.equals(rs.getString("usuario"))

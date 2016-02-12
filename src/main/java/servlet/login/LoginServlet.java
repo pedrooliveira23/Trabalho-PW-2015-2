@@ -19,7 +19,6 @@ public class LoginServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		// Referência para a sessão.
 		HttpSession sessaolog = req.getSession();
 
 		String usuario = req.getParameter("usuario");

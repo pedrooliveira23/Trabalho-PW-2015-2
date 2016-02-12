@@ -10,5 +10,5 @@ public interface InterfaceDaoInstituicao {
 	void remover(Instituicao instituicao) throws SQLException;
 	void editar(Instituicao instituicao) throws SQLException;
 	List<Instituicao> pesquisar(String dadoCadastral) throws SQLException;
-	List<Instituicao> listar(String dadoCadastral) throws SQLException;
+	List<Instituicao> listar() throws SQLException;
 }
