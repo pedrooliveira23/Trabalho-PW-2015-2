@@ -69,7 +69,7 @@
 				%>
 
 				<tr
-					onclick="document.location = 'editarInstituicao?nome=<%=tabela.getNomeInst(i)%>&cnpj=<%=tabela.getCnpj(i)%>&telefone=<%=tabela.getTelefone(i)%>&endereco=<%=tabela.getEndereco(i)%>&nivel=<%=tabela.getNivel(i)%>&email=<%=tabela.getEmail(i)%>&nomeResp=<%=tabela.getNomeResponsavel(i)%>&telefoneResp=<%=tabela.getTelefoneResponsavel(i)%>&emailResp=<%=tabela.getEmailResponsavel(i)%>';"
+					onclick="document.location = 'editarInstituicao?nome=<%=tabela.getNomeInst(i)%>&cnpj=<%=tabela.getCnpj(i)%>&telefone=<%=tabela.getTelefone(i)%>&endereco=<%=tabela.getEndereco(i)%>&nivel=<%=tabela.getNivel(i)%>&email=<%=tabela.getEmail(i)%>&nomeResponsavel=<%=tabela.getNomeResponsavel(i)%>&telefoneResponsavel=<%=tabela.getTelefoneResponsavel(i)%>&emailResponsavel=<%=tabela.getEmailResponsavel(i)%>';"
 					class="linhaTabela">
 					<td><%=tabela.getNomeInst(i)%></td>
 					<td><%=tabela.getCnpj(i)%></td>

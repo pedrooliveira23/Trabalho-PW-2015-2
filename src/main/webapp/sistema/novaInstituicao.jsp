@@ -32,7 +32,7 @@
 		<a href="sistema" class="brand-logo"><img
 			src="Imagens/Logo.png" /></a>
 		<ul id="menu">
-			<li><a  class="white-text" href="pesquisar">Pesquisar</a></li>
+			<li><a  class="white-text" href="sistema">Pesquisar</a></li>
 			<li class="logout"><a class="white-text" href="logout">Logout</a></li>
 		</ul>
 	</div>
@@ -42,7 +42,7 @@
 				class="logo-cad brand-logo"
 				src="Imagens/Logo.png" /></a>
 			<ul id="menu">
-				<li class="right"><a href="pesquisar">Pesquisar</a></li>
+				<li class="right"><a href="sistema">Pesquisar</a></li>
 				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div>

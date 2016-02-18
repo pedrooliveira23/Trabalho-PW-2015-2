@@ -19,7 +19,7 @@ import classe.core.InstituicaoDao;
  * Servlet implementation class PesquisarServlet
  */
 
-@WebServlet(value = "/pesquisar")
+@WebServlet(value = "/sistema")
 public class PesquisarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,24 +28,36 @@ public class PesquisarServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		// Referência para a sessão.
-		HttpSession sessao = req.getSession();
 
-		try {
-			InstituicaoDao dao = new InstituicaoDao();
+		HttpSession sessaoLogin = req.getSession();
 
-			String paramPesquisa = req.getParameter("pesquisa");
-			String pesquisa = paramPesquisa == null ? "" : paramPesquisa;
+		// Obtém referência para o atributo "usuarioLogado".
+		Boolean usuarioLogado = (Boolean) sessaoLogin
+				.getAttribute("usuarioLogado");
 
-			if (pesquisa.equals("")) {
-				sessao.setAttribute("insts", dao.listar());
-			} else {
-				sessao.setAttribute("insts", dao.pesquisar(pesquisa));
+		if (usuarioLogado == null || usuarioLogado == false) {
+			req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);
+		} else {
+
+			HttpSession sessao = req.getSession();
+
+			try {
+				InstituicaoDao dao = new InstituicaoDao();
+
+				String paramPesquisa = req.getParameter("pesquisa");
+				String pesquisa = paramPesquisa == null ? "" : paramPesquisa;
+
+				if (pesquisa.equals("")) {
+					sessao.setAttribute("insts", dao.listar());
+				} else {
+					sessao.setAttribute("insts", dao.pesquisar(pesquisa));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		req.getRequestDispatcher("sistema/pesquisar.jsp").forward(req, resp);
+			req.getRequestDispatcher("sistema/index.jsp").forward(req, resp);
+		}
 	}
 }

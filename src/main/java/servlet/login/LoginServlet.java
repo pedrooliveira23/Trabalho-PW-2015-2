@@ -21,8 +21,10 @@ public class LoginServlet extends HttpServlet {
 
 		HttpSession sessaolog = req.getSession();
 
-		String usuario = req.getParameter("usuario");
-		String senha = req.getParameter("senha");
+		String usuarioParam = req.getParameter("usuario");
+		String senhaParam = req.getParameter("senha");
+		String usuario = usuarioParam == null ? "" : usuarioParam;
+		String senha = usuarioParam == null ? "" : senhaParam;
 		
 		LoginDao loginDao = new LoginDao();		
 		

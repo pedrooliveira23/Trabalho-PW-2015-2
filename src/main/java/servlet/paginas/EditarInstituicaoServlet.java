@@ -1,6 +1,7 @@
 package servlet.paginas;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classe.core.Instituicao;
+import classe.core.InstituicaoDao;
 
 /**
  * Servlet implementation class NovaInstituicaoServlet
@@ -26,47 +28,60 @@ public class EditarInstituicaoServlet extends HttpServlet {
 		// Referência para a sessão.
 		HttpSession sessao = req.getSession();
 
-		ArrayList<Instituicao> insts;
+		String nomeParam = req.getParameter("nome");
+		String nivelCursoParam = req.getParameter("nivelCurso");
+		String enderecoParam = req.getParameter("endereco");
+		String telefoneParam = req.getParameter("telefone");
+		String emailParam = req.getParameter("email");
+		String nomeResponsavelParam = req.getParameter("nomeResponsavel");
+		String telefoneResponsavelParam = req
+				.getParameter("telefoneResponsavel");
+		String emailResponsavelParam = req.getParameter("emailResponsavel");
+		String cnpjParam = req.getParameter("cnpj");
 
-		if (sessao.getAttribute("insts") == null) {
-			insts = new ArrayList<Instituicao>();
-			sessao.setAttribute("insts", insts);
-		} else {
-			insts = ((ArrayList<Instituicao>) sessao.getAttribute("insts"));
-		}
+		String nome = nomeParam == null ? "" : nomeParam;
+		String nivelCurso = nivelCursoParam == null ? "" : nivelCursoParam;
+		String endereco = enderecoParam == null ? "" : enderecoParam;
+		String telefone = telefoneParam == null ? "" : telefoneParam;
+		String email = emailParam == null ? "" : emailParam;
+		String nomeResponsavel = nomeResponsavelParam == null ? ""
+				: nomeResponsavelParam;
+		String telefoneResponsavel = telefoneResponsavelParam == null ? ""
+				: telefoneResponsavelParam;
+		String emailResponsavel = emailResponsavelParam == null ? ""
+				: emailResponsavelParam;
+		String cnpj = cnpjParam == null ? "" : cnpjParam;
 
-		String paramEditar = req.getParameter("acao") == null ? "" : req
-				.getParameter("acao");
+		String acaoParam = req.getParameter("acao");
+		String acao = acaoParam == null ? "" : acaoParam;
+		try {
+			InstituicaoDao dao = new InstituicaoDao();
+			if (acao.equals("Editar")) {
+				if (!dao.pesquisar(cnpj).equals(null)) {
+					Instituicao instituicao = dao.pesquisar(cnpj).get(0);
+					instituicao.setEmail(email);
+					instituicao.setEndereco(endereco);
+					instituicao.setNivelCurso(nivelCurso);
+					instituicao.setNome(nome);
+					instituicao.setNomeResponsavel(nomeResponsavel);
+					instituicao.setTelefone(telefone);
+					instituicao.setTelefoneResponsavel(telefoneResponsavel);
+					instituicao.setEmailResponsavel(emailResponsavel);
+					dao.adicionar(instituicao);
+				}
 
-		if (req.getParameter("cnpj") != null && paramEditar.equals("Enviar")) {
-			for (int i = 0; i < insts.size(); i++) {
-				if (insts.get(i).getCnpj().equals(req.getParameter("cnpj"))) {
-					insts.get(i).setEmail(req.getParameter("email"));
-					insts.get(i).setEmailResponsavel(
-							req.getParameter("emailResp"));
-					insts.get(i).setEndereco(req.getParameter("endereco"));
-					insts.get(i).setNivelCurso(req.getParameter("nivel"));
-					insts.get(i).setNome(req.getParameter("nome"));
-					insts.get(i).setNomeResponsavel(
-							req.getParameter("nomeResp"));
-					insts.get(i).setTelefone(req.getParameter("telefone"));
-					insts.get(i).setTelefoneResponsavel(
-							req.getParameter("telefoneResp"));
-					sessao.setAttribute("insts", insts);
+			}
+
+			if (acao.equals("Excluir")) {
+				if (!dao.pesquisar(cnpj).equals(null)) {
+					Instituicao instituicao = dao.pesquisar(cnpj).get(0);
+					dao.remover(instituicao);
 				}
 			}
-		} else if (req.getParameter("cnpj") != null
-				&& paramEditar.equals("Excluir")) {
-			for (int i = 0; i < insts.size(); i++) {
-				if (insts.get(i).getCnpj().equals(req.getParameter("cnpj"))) {
-					insts.remove(i);
-					sessao.setAttribute("insts", insts);
-					req.getRequestDispatcher("sistema/pesquisar.jsp").forward(
-							req, resp);
-				}
-			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
 		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req,
 				resp);
 
