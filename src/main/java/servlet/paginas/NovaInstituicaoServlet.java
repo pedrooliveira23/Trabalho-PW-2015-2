@@ -51,26 +51,25 @@ public class NovaInstituicaoServlet extends HttpServlet {
 		String acaoParam = req.getParameter("acao");
 		String acao = acaoParam == null ? "" : acaoParam;
 
-		if (acao.equals("Enviar") && !cnpj.equals("")) {
-			try {
-				InstituicaoDao dao = new InstituicaoDao();
-				if (dao.pesquisar(cnpj).equals(null)) {
-					Instituicao instituicao = new Instituicao();
-					instituicao.setCnpj(cnpj);
-					instituicao.setEmail(email);
-					instituicao.setEndereco(endereco);
-					instituicao.setNivelCurso(nivelCurso);
-					instituicao.setNome(nome);
-					instituicao.setNomeResponsavel(nomeResponsavel);
-					instituicao.setTelefone(telefone);
-					instituicao.setTelefoneResponsavel(telefoneResponsavel);
-					instituicao.setEmailResponsavel(emailResponsavel);
-					dao.adicionar(instituicao);
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		Instituicao instituicao = new Instituicao();
+		instituicao.setCnpj(cnpj);
+		instituicao.setEmail(email);
+		instituicao.setEndereco(endereco);
+		instituicao.setNivelCurso(nivelCurso);
+		instituicao.setNome(nome);
+		instituicao.setNomeResponsavel(nomeResponsavel);
+		instituicao.setTelefone(telefone);
+		instituicao.setTelefoneResponsavel(telefoneResponsavel);
+		instituicao.setEmailResponsavel(emailResponsavel);
+		try {
+			InstituicaoDao dao = new InstituicaoDao();
+			if (acao.equals("Enviar") && !cnpj.equals("")
+					&& !dao.pesquisar(cnpj).contains(instituicao)) {
+				dao.adicionar(instituicao);
 			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		if (acao.equals("Limpar")) {

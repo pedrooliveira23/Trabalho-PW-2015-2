@@ -53,14 +53,14 @@
 			<input class="col s12 m5 l5" type="text"
 				placeholder="Nome da  Instituição" name="nome"/> <input class="col s12 m5 l5"
 				type="text" placeholder="CNPJ" name="cnpj"/> <input class="col s12 m5 l5"
-				type="text" placeholder="Nível de curso" name="nivel" /> <input
+				type="text" placeholder="Nível de curso" name="nivelCurso" /> <input
 				class="col s12 m5 l5" type="text" placeholder="Endereço" name="endereco" /> <input
 				class="col s12 m5 l5" type="text" placeholder="Telefone" name="telefone" /> <input
 				class="col s12 m5 l5" type="email" placeholder="E-mail" name="email" /> <input
-				class="col s12 m5 l5" type="text" placeholder="Nome do Resposável" name="nomeResp" /> <input
+				class="col s12 m5 l5" type="text" placeholder="Nome do Resposável" name="nomeResponsavel" /> <input
 				class="col s12 m5 l5" type="text"
 				placeholder="Telefone do Responsável" name="telefoneResp" /> <input class="col s12 m5 l5"
-				type="text" placeholder="E-mail do Responsável" name="emailResp" />
+				type="email" placeholder="E-mail do Responsável" name="emailResponsavel" />
 			<div class="col s12 m10 l10">
 				<input type="submit" class="btn right" value="Enviar" name="acao"/>
 				<input type="submit" class="btn" value="Limpar" name="acao" />

@@ -54,24 +54,25 @@
 	<form class="addInst">
 		<input class="col s12 m5 l5" type="text"
 			placeholder="Nome da  Instituição" name="nome"
-			value="<%=request.getParameter("nome")%>" disabled="disabled"/> <input
+			value="<%=request.getParameter("nome")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="CNPJ" name="cnpj"
-			value="<%=request.getParameter("cnpj")%>" disabled="disabled"/> <input
+			value="<%=request.getParameter("cnpj")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="Nível de curso"
-			name="nivel" value="<%=request.getParameter("nivelCurso")%>" disabled="disabled"/> <input class="col s12 m5 l5" type="text"
+			name="nivelCurso" value="<%=request.getParameter("nivelCurso")%>" /> <input class="col s12 m5 l5" type="text"
 			placeholder="Endereço" name="endereco"
-			value="<%=request.getParameter("endereco")%>" disabled="disabled"/> <input
-			class="col s12 m5 l5" type="text" placeholder="Telefone"
-			name="telefone" value="<%=request.getParameter("telefone")%>" disabled="disabled"/> <input class="col s12 m5 l5" type="email"
+			value="<%=request.getParameter("endereco")%>" />
+		<input class="col s12 m5 l5" type="text" placeholder="Telefone"
+			name="telefone" value="<%=request.getParameter("telefone")%>"
+			 /> <input class="col s12 m5 l5" type="email"
 			placeholder="E-mail" name="email"
-			value="<%=request.getParameter("email")%>" disabled="disabled"/> <input
+			value="<%=request.getParameter("email")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="Nome do Resposável"
-			name="nomeResp" value="<%=request.getParameter("nomeResponsavel")%>" disabled="disabled"/> <input
+			name="nomeResponsavel" value="<%=request.getParameter("nomeResponsavel")%>"/> <input
 			class="col s12 m5 l5" type="text"
 			placeholder="Telefone do Responsável" name="telefoneResponsavel"
-			value="<%=request.getParameter("telefoneResp")%>" disabled="disabled"/> <input
+			value="<%=request.getParameter("telefoneResponsavel")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="E-mail do Responsável"
-			name="emailResp" value="<%=request.getParameter("emailResponsavel")%>" disabled="disabled"/>
+			name="emailResponsavel" value="<%=request.getParameter("emailResponsavel")%>"/>
 		<div class="col s12 m10 l10">
 			<input type="submit" class="btn right" value="Editar"
 				name="acao" onclick="editar()" /> <input type="submit" class="btn"

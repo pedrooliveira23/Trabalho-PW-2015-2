@@ -40,7 +40,7 @@ public class InstituicaoDao implements InterfaceDaoInstituicao {
 	}
 
 	public void remover(Instituicao instituicao) throws SQLException {
-		String sql = "delete from instituicoes where cpnj=?";
+		String sql = "delete from instituicoes where cnpj=?";
 		PreparedStatement prepareStatement;
 		prepareStatement = conn.prepareStatement(sql);
 		prepareStatement.setString(1, instituicao.getCnpj());
@@ -68,7 +68,7 @@ public class InstituicaoDao implements InterfaceDaoInstituicao {
 	public List<Instituicao> pesquisar(String dadoCadastral)
 			throws SQLException {
 		List<Instituicao> instituicoes = new ArrayList<Instituicao>();
-		String sql = "select * from instituicoes order by nome where cnpj=? or nome=? or nivelCurso=? or endereco=? or telefone=? or email=? or nomeResponsavel=? or telefoneResponsavel=? or emailResponsavel=?";
+		String sql = "select * from instituicoes where cnpj=? or nome=? or nivelCurso=? or endereco=? or telefone=? or email=? or nomeResponsavel=? or telefoneResponsavel=? or emailResponsavel=? order by nome";
 		PreparedStatement prepareStatement = conn.prepareStatement(sql);
 		prepareStatement.setString(1, dadoCadastral);
 		prepareStatement.setString(2, dadoCadastral);

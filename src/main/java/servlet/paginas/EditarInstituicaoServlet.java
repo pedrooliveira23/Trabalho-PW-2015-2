@@ -73,11 +73,16 @@ public class EditarInstituicaoServlet extends HttpServlet {
 			}
 
 			if (acao.equals("Excluir")) {
-				if (!dao.pesquisar(cnpj).equals(null)) {
-					Instituicao instituicao = dao.pesquisar(cnpj).get(0);
-					dao.remover(instituicao);
+					dao.remover(dao.pesquisar(cnpj).get(0));
+					req.setAttribute("nome", "");
+					req.setAttribute("nivelCurso", "");
+					req.setAttribute("endereco", "");
+					req.setAttribute("telefone", "");
+					req.setAttribute("email", "");
+					req.setAttribute("nomeResponsavel", "");
+					req.setAttribute("telefoneResponsavel", "");
+					req.setAttribute("cnpj", "");
 				}
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -32,7 +32,7 @@
 	<div class="nav-wrapper side-nav fixed light-blue darken-9">
 		<a href="sistema" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<ul id="menu">
-			<li><a class="white-text" href="pesquisar">Pesquisar</a></li>
+			<li><a class="white-text" href="sistema">Pesquisar</a></li>
 			<li class="logout"><a class="white-text" href="logout">Logout</a></li>
 		</ul>
 	</div>
@@ -41,7 +41,7 @@
 			<a href="sistema" class="center-align"><img
 				class="logo-cad brand-logo" src="Imagens/Logo.png" /></a>
 			<ul id="menu">
-				<li class="right"><a href="pesquisar">Pesquisar</a></li>
+				<li class="right"><a href="sistema">Pesquisar</a></li>
 				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div>
@@ -69,7 +69,7 @@
 				%>
 
 				<tr
-					onclick="document.location = 'editarInstituicao?nome=<%=tabela.getNomeInst(i)%>&cnpj=<%=tabela.getCnpj(i)%>&telefone=<%=tabela.getTelefone(i)%>&endereco=<%=tabela.getEndereco(i)%>&nivel=<%=tabela.getNivel(i)%>&email=<%=tabela.getEmail(i)%>&nomeResponsavel=<%=tabela.getNomeResponsavel(i)%>&telefoneResponsavel=<%=tabela.getTelefoneResponsavel(i)%>&emailResponsavel=<%=tabela.getEmailResponsavel(i)%>';"
+					onclick="document.location = 'editarInstituicao?nome=<%=tabela.getNomeInst(i)%>&cnpj=<%=tabela.getCnpj(i)%>&telefone=<%=tabela.getTelefone(i)%>&endereco=<%=tabela.getEndereco(i)%>&nivelCurso=<%=tabela.getNivel(i)%>&email=<%=tabela.getEmail(i)%>&nomeResponsavel=<%=tabela.getNomeResponsavel(i)%>&telefoneResponsavel=<%=tabela.getTelefoneResponsavel(i)%>&emailResponsavel=<%=tabela.getEmailResponsavel(i)%>';"
 					class="linhaTabela">
 					<td><%=tabela.getNomeInst(i)%></td>
 					<td><%=tabela.getCnpj(i)%></td>
