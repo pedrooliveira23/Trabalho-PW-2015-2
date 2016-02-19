@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu Feb 18 21:22:50 BRST 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0152-f6b1-729e-0000036179b0 
+Fri Feb 19 19:01:41 BRST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0152-fb56-93e0-0000064cd4d8 
 on database directory /home/pedro/git/Trabalho-PW-2015-2/cie with class loader WebappClassLoader
   context: /cad-institucional
   delegate: false
