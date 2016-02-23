@@ -58,7 +58,8 @@ public class EditarInstituicaoServlet extends HttpServlet {
 			InstituicaoDao dao = new InstituicaoDao();
 			if (acao.equals("Editar")) {
 				if (!dao.pesquisar(cnpj).equals(null)) {
-					Instituicao instituicao = dao.pesquisar(cnpj).get(0);
+					Instituicao instituicao = new Instituicao();
+					instituicao.setCnpj(cnpj);
 					instituicao.setEmail(email);
 					instituicao.setEndereco(endereco);
 					instituicao.setNivelCurso(nivelCurso);
@@ -67,7 +68,7 @@ public class EditarInstituicaoServlet extends HttpServlet {
 					instituicao.setTelefone(telefone);
 					instituicao.setTelefoneResponsavel(telefoneResponsavel);
 					instituicao.setEmailResponsavel(emailResponsavel);
-					dao.adicionar(instituicao);
+					dao.editar(instituicao);
 				}
 
 			}

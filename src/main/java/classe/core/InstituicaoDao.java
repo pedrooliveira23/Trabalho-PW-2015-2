@@ -49,7 +49,7 @@ public class InstituicaoDao implements InterfaceDaoInstituicao {
 	}
 
 	public void editar(Instituicao instituicao) throws SQLException {
-		String sql = "update insituicoes set nome=?, nivelCurso=?, endereco=?, telefone=?, email=?, nomeResponsavel=?, telefoneResponsavel=?, emailResponsavel=? where cnpj=?";
+		String sql = "update instituicoes set nome=?, nivelCurso=?, endereco=?, telefone=?, email=?, nomeResponsavel=?, telefoneResponsavel=?, emailResponsavel=? where cnpj=?";
 		PreparedStatement prepareStatement;
 		prepareStatement = conn.prepareStatement(sql);
 		prepareStatement.setString(1, instituicao.getNome());

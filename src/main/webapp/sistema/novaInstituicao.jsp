@@ -59,7 +59,7 @@
 				class="col s12 m5 l5" type="email" placeholder="E-mail" name="email" /> <input
 				class="col s12 m5 l5" type="text" placeholder="Nome do Resposável" name="nomeResponsavel" /> <input
 				class="col s12 m5 l5" type="text"
-				placeholder="Telefone do Responsável" name="telefoneResp" /> <input class="col s12 m5 l5"
+				placeholder="Telefone do Responsável" name="telefoneResponsavel" /> <input class="col s12 m5 l5"
 				type="email" placeholder="E-mail do Responsável" name="emailResponsavel" />
 			<div class="col s12 m10 l10">
 				<input type="submit" class="btn right" value="Enviar" name="acao"/>
