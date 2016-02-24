@@ -13,11 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classe.core.Instituicao;
+import classe.core.InstituicaoBo;
 import classe.core.InstituicaoDao;
-
-/**
- * Servlet implementation class PesquisarServlet
- */
 
 @WebServlet(value = "/sistema")
 public class PesquisarServlet extends HttpServlet {
@@ -38,23 +35,18 @@ public class PesquisarServlet extends HttpServlet {
 		if (usuarioLogado == null || usuarioLogado == false) {
 			req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);
 		} else {
+			String paramPesquisa = req.getParameter("pesquisa");
+			String pesquisa = paramPesquisa == null ? "" : paramPesquisa;
 
 			HttpSession sessao = req.getSession();
 
-			try {
-				InstituicaoDao dao = new InstituicaoDao();
+			InstituicaoBo bo = new InstituicaoBo();
 
-				String paramPesquisa = req.getParameter("pesquisa");
-				String pesquisa = paramPesquisa == null ? "" : paramPesquisa;
-
-				if (pesquisa.equals("")) {
-					sessao.setAttribute("insts", dao.listar());
-				} else {
-					sessao.setAttribute("insts", dao.pesquisar(pesquisa));
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (pesquisa.equals("")) {
+				sessao.setAttribute("listaDeInstituicoes", bo.listar());
+			} else {
+				sessao.setAttribute("listaDeInstituicoes",
+						bo.pesquisar(pesquisa));
 			}
 
 			req.getRequestDispatcher("sistema/index.jsp").forward(req, resp);

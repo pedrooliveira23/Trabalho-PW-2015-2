@@ -1,124 +1,87 @@
 package classe.core;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import interfaces.InterfaceDaoInstituicao;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-public class InstituicaoDao implements InterfaceDaoInstituicao {
-	private String url = "jdbc:derby:cie;create=true";
-	private Connection conn;
+public class InstituicaoDao {
+	private EntityManager em = null;
+	private EntityManagerFactory emf = null;
 
-	public InstituicaoDao() throws SQLException {
+	public void adicionar(Instituicao instituicao) {
 		try {
-			conn = DriverManager.getConnection(url);
-		} catch (SQLException e) {
+			// Obter uma fábrica de conexões com o banco de dados.
+			emf = Persistence
+					.createEntityManagerFactory("instituicoes-persistence-unit");
+
+			// Obter conexão com o banco de dados.
+			em = emf.createEntityManager();
+
+			em.getTransaction().begin();
+
+			em.persist(instituicao);
+
+			em.getTransaction().commit();
+		} catch (Exception e) {
 			e.printStackTrace();
+			if (em != null) {
+				em.getTransaction().rollback();
+			}
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+			if (emf != null) {
+				emf.close();
+			}
 		}
 	}
 
-	public void adicionar(Instituicao instituicao) throws SQLException {
-		String sql = "insert into instituicoes (nome, nivelCurso, endereco, telefone, email, nomeResponsavel, telefoneResponsavel, emailResponsavel, cnpj) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		PreparedStatement prepareStatement;
-		prepareStatement = conn.prepareStatement(sql);
-		prepareStatement.setString(1, instituicao.getNome());
-		prepareStatement.setString(2, instituicao.getNivelCurso());
-		prepareStatement.setString(3, instituicao.getEndereco());
-		prepareStatement.setString(4, instituicao.getTelefone());
-		prepareStatement.setString(5, instituicao.getEmail());
-		prepareStatement.setString(6, instituicao.getNomeResponsavel());
-		prepareStatement.setString(7, instituicao.getTelefoneResponsavel());
-		prepareStatement.setString(8, instituicao.getEmailResponsavel());
-		prepareStatement.setString(9, instituicao.getCnpj());
-		prepareStatement.executeUpdate();
-		prepareStatement.close();
+	public void remover(Instituicao instituicao) {
+		em.getTransaction().begin();
+		em.remove(instituicao);
+		em.getTransaction().commit();
 	}
 
-	public void remover(Instituicao instituicao) throws SQLException {
-		String sql = "delete from instituicoes where cnpj=?";
-		PreparedStatement prepareStatement;
-		prepareStatement = conn.prepareStatement(sql);
-		prepareStatement.setString(1, instituicao.getCnpj());
-		prepareStatement.executeUpdate();
-		prepareStatement.close();
+	public void editar(Instituicao instituicao, Instituicao instituicaoAnterior) {
+		remover(instituicaoAnterior);
+		adicionar(instituicao);
 	}
-
-	public void editar(Instituicao instituicao) throws SQLException {
-		String sql = "update instituicoes set nome=?, nivelCurso=?, endereco=?, telefone=?, email=?, nomeResponsavel=?, telefoneResponsavel=?, emailResponsavel=? where cnpj=?";
-		PreparedStatement prepareStatement;
-		prepareStatement = conn.prepareStatement(sql);
-		prepareStatement.setString(1, instituicao.getNome());
-		prepareStatement.setString(2, instituicao.getNivelCurso());
-		prepareStatement.setString(3, instituicao.getEndereco());
-		prepareStatement.setString(4, instituicao.getTelefone());
-		prepareStatement.setString(5, instituicao.getEmail());
-		prepareStatement.setString(6, instituicao.getNomeResponsavel());
-		prepareStatement.setString(7, instituicao.getTelefoneResponsavel());
-		prepareStatement.setString(8, instituicao.getEmailResponsavel());
-		prepareStatement.setString(9, instituicao.getCnpj());
-		prepareStatement.executeUpdate();
-		prepareStatement.close();
-	}
-
-	public List<Instituicao> pesquisar(String dadoCadastral)
-			throws SQLException {
-		List<Instituicao> instituicoes = new ArrayList<Instituicao>();
-		String sql = "select * from instituicoes where cnpj=? or nome=? or nivelCurso=? or endereco=? or telefone=? or email=? or nomeResponsavel=? or telefoneResponsavel=? or emailResponsavel=? order by nome";
-		PreparedStatement prepareStatement = conn.prepareStatement(sql);
-		prepareStatement.setString(1, dadoCadastral);
-		prepareStatement.setString(2, dadoCadastral);
-		prepareStatement.setString(3, dadoCadastral);
-		prepareStatement.setString(4, dadoCadastral);
-		prepareStatement.setString(5, dadoCadastral);
-		prepareStatement.setString(6, dadoCadastral);
-		prepareStatement.setString(7, dadoCadastral);
-		prepareStatement.setString(8, dadoCadastral);
-		prepareStatement.setString(9, dadoCadastral);
-		ResultSet rs = prepareStatement.executeQuery();
-		while (rs.next()) {
-			Instituicao novaInstituicao = new Instituicao();
-			novaInstituicao.setNome(rs.getString(1));
-			novaInstituicao.setNivelCurso(rs.getString(2));
-			novaInstituicao.setEndereco(rs.getString(3));
-			novaInstituicao.setTelefone(rs.getString(4));
-			novaInstituicao.setEmail(rs.getString(5));
-			novaInstituicao.setNomeResponsavel(rs.getString(6));
-			novaInstituicao.setTelefoneResponsavel(rs.getString(7));
-			novaInstituicao.setEmailResponsavel(rs.getString(8));
-			novaInstituicao.setCnpj(rs.getString(9));
-			instituicoes.add(novaInstituicao);
+	
+	public List<Instituicao> pesquisar(String dadoCadastral) {
+		List<Instituicao> result = new ArrayList<Instituicao>();
+		try {
+			String jpql = "from Instituicoes where nome = '" + dadoCadastral
+					+ "' or nivelCurso'" + dadoCadastral + "' or endereco'"
+					+ dadoCadastral + "' or telefone'" + dadoCadastral
+					+ "' or email'" + dadoCadastral + "' or nomeResponsavel'"
+					+ dadoCadastral + "' or telefoneResponsavel'"
+					+ dadoCadastral + "' or emailResponsavel'" + dadoCadastral
+					+ "'";
+			result = JpaUtil.getEntityManager()
+					.createQuery(jpql, Instituicao.class).getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JpaUtil.closeEntityManager();
 		}
-		rs.close();
-		prepareStatement.close();
-		return instituicoes;
+		return result;
 	}
 
-	public List<Instituicao> listar() throws SQLException {
-		List<Instituicao> instituicoes = new ArrayList<Instituicao>();
-		String sql = "select * from instituicoes order by nome";
-		PreparedStatement prepareStatement = conn.prepareStatement(sql);
-		ResultSet rs = prepareStatement.executeQuery();
-		while (rs.next()) {
-			Instituicao novaInstituicao = new Instituicao();
-			novaInstituicao.setNome(rs.getString(1));
-			novaInstituicao.setNivelCurso(rs.getString(2));
-			novaInstituicao.setEndereco(rs.getString(3));
-			novaInstituicao.setTelefone(rs.getString(4));
-			novaInstituicao.setEmail(rs.getString(5));
-			novaInstituicao.setNomeResponsavel(rs.getString(6));
-			novaInstituicao.setTelefoneResponsavel(rs.getString(7));
-			novaInstituicao.setEmailResponsavel(rs.getString(8));
-			novaInstituicao.setCnpj(rs.getString(9));
-			instituicoes.add(novaInstituicao);
+	public List<Instituicao> listar() {
+		List<Instituicao> result = new ArrayList<Instituicao>();
+		try {
+			String jpql = "from Instituicoes";
+			result = JpaUtil.getEntityManager()
+					.createQuery(jpql, Instituicao.class).getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JpaUtil.closeEntityManager();
 		}
-		rs.close();
-		prepareStatement.close();
-		return instituicoes;
+		return result;
 	}
-
 }

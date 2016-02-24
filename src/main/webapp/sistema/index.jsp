@@ -61,19 +61,18 @@
 			</thead>
 			<tbody>
 				<%
-					classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
-							(java.util.ArrayList<classe.core.Instituicao>) session
-									.getAttribute("insts"));
+					java.util.List<classe.core.Instituicao> lista = (java.util.List<classe.core.Instituicao>) session
+							.getAttribute("listaDeInstituicoes");
 
-					for (int i = 0; i < tabela.getInsts().size(); i++) {
+					for (int i = 0; i < lista.size(); i++) {
 				%>
 
 				<tr
-					onclick="document.location = 'editarInstituicao?nome=<%=tabela.getNomeInst(i)%>&cnpj=<%=tabela.getCnpj(i)%>&telefone=<%=tabela.getTelefone(i)%>&endereco=<%=tabela.getEndereco(i)%>&nivelCurso=<%=tabela.getNivel(i)%>&email=<%=tabela.getEmail(i)%>&nomeResponsavel=<%=tabela.getNomeResponsavel(i)%>&telefoneResponsavel=<%=tabela.getTelefoneResponsavel(i)%>&emailResponsavel=<%=tabela.getEmailResponsavel(i)%>';"
+					onclick="document.location = 'editarInstituicao?nome=<%=lista.get(i).getNome()%>&cnpj=<%=lista.get(i).getCnpj()%>&telefone=<%=lista.get(i).getTelefone()%>&endereco=<%=lista.get(i).getEndereco()%>&nivelCurso=<%=lista.get(i).getNivel()%>&email=<%=lista.get(i).getEmail()%>&nomeResponsavel=<%=lista.get(i).getNomeResponsavel()%>&telefoneResponsavel=<%=lista.get(i).getTelefoneResponsavel()%>&emailResponsavel=<%=lista.get(i).getEmailResponsavel()%>';"
 					class="linhaTabela">
-					<td><%=tabela.getNomeInst(i)%></td>
-					<td><%=tabela.getCnpj(i)%></td>
-					<td><%=tabela.getTelefone(i)%></td>
+					<td><%=lista.get(i).getNome()%></td>
+					<td><%=lista.get(i).getCnpj()%></td>
+					<td><%=lista.get(i).getTelefone()%></td>
 				</tr>
 				<%
 					}

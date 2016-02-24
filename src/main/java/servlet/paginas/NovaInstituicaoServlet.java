@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classe.core.Instituicao;
+import classe.core.InstituicaoBo;
 import classe.core.InstituicaoDao;
 
 /**
@@ -23,7 +24,39 @@ public class NovaInstituicaoServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		
 
+		String acaoParam = req.getParameter("acao");
+		String acao = acaoParam == null ? "" : acaoParam;
+		
+		Instituicao instituicao = getInstituicao(req);
+		
+		InstituicaoBo bo = new InstituicaoBo();
+		
+		if (acao.equals("Enviar") && !instituicao.getCnpj().equals("")
+				&& !bo.pesquisar(instituicao.getCnpj()).contains(instituicao)) {
+			bo.adicionar(instituicao);
+		}
+
+		if (acao.equals("Limpar")) {
+			req.setAttribute("nome", "");
+			req.setAttribute("nivelCurso", "");
+			req.setAttribute("endereco", "");
+			req.setAttribute("telefone", "");
+			req.setAttribute("email", "");
+			req.setAttribute("nomeResponsavel", "");
+			req.setAttribute("telefoneResponsavel", "");
+			req.setAttribute("cnpj", "");
+		}
+
+		// Referência para a sessão.
+		HttpSession sessao = req.getSession();
+		req.getRequestDispatcher("sistema/novaInstituicao.jsp").forward(req,
+				resp);
+
+	}
+	
+	private Instituicao getInstituicao(HttpServletRequest req) {
 		String nomeParam = req.getParameter("nome");
 		String nivelCursoParam = req.getParameter("nivelCurso");
 		String enderecoParam = req.getParameter("endereco");
@@ -48,46 +81,10 @@ public class NovaInstituicaoServlet extends HttpServlet {
 				: emailResponsavelParam;
 		String cnpj = cnpjParam == null ? "" : cnpjParam;
 
-		String acaoParam = req.getParameter("acao");
-		String acao = acaoParam == null ? "" : acaoParam;
-
-		Instituicao instituicao = new Instituicao();
-		instituicao.setCnpj(cnpj);
-		instituicao.setEmail(email);
-		instituicao.setEndereco(endereco);
-		instituicao.setNivelCurso(nivelCurso);
-		instituicao.setNome(nome);
-		instituicao.setNomeResponsavel(nomeResponsavel);
-		instituicao.setTelefone(telefone);
-		instituicao.setTelefoneResponsavel(telefoneResponsavel);
-		instituicao.setEmailResponsavel(emailResponsavel);
-		try {
-			InstituicaoDao dao = new InstituicaoDao();
-			if (acao.equals("Enviar") && !cnpj.equals("")
-					&& !dao.pesquisar(cnpj).contains(instituicao)) {
-				dao.adicionar(instituicao);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		if (acao.equals("Limpar")) {
-			req.setAttribute("nome", "");
-			req.setAttribute("nivelCurso", "");
-			req.setAttribute("endereco", "");
-			req.setAttribute("telefone", "");
-			req.setAttribute("email", "");
-			req.setAttribute("nomeResponsavel", "");
-			req.setAttribute("telefoneResponsavel", "");
-			req.setAttribute("cnpj", "");
-		}
-
-		// Referência para a sessão.
-		HttpSession sessao = req.getSession();
-		req.getRequestDispatcher("sistema/novaInstituicao.jsp").forward(req,
-				resp);
-
+		return new Instituicao(nome, nivelCurso, endereco,
+				telefone, email, nomeResponsavel, telefoneResponsavel,
+				emailResponsavel, cnpj);
+		
 	}
 
 }

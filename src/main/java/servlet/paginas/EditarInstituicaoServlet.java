@@ -54,7 +54,7 @@ public class EditarInstituicaoServlet extends HttpServlet {
 
 		String acaoParam = req.getParameter("acao");
 		String acao = acaoParam == null ? "" : acaoParam;
-		try {
+		/*try {
 			InstituicaoDao dao = new InstituicaoDao();
 			if (acao.equals("Editar")) {
 				if (!dao.pesquisar(cnpj).equals(null)) {
@@ -87,7 +87,7 @@ public class EditarInstituicaoServlet extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req,
 				resp);
 
