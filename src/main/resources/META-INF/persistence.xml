@@ -9,7 +9,7 @@
 	  <!-- Instruindo ao JPA que será usado Hibernate. -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>classe.core.Instituicao</class>
-     <class>classe.core.Login</class>
+     <class>classe.core.Usuario</class>
 		<properties>
 			<!-- Driver JDBC do Derby. -->
 			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver"/>

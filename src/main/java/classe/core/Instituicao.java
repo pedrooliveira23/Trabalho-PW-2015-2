@@ -5,10 +5,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Instituicao {
-	private String nome, nivelCurso, endereco, telefone, email,
-			nomeResponsavel, telefoneResponsavel, emailResponsavel;
 	@Id
 	private String cnpj;
+	private String nome, nivelCurso, endereco, telefone, email,
+			nomeResponsavel, telefoneResponsavel, emailResponsavel;
 
 	public Instituicao() {
 

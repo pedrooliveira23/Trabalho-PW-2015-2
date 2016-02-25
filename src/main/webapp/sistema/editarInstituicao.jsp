@@ -45,11 +45,7 @@
 			</ul>
 		</div>
 	</nav>
-	<main class="container grey-text text-darken-4 row"> <%
- 	classe.core.tabelaInstituicoes tabela = new classe.core.tabelaInstituicoes(
- 			(java.util.ArrayList<classe.core.Instituicao>) session
- 					.getAttribute("insts"));
- %>
+	<main class="container grey-text text-darken-4 row">
 	<h1>Editar Instituição</h1>
 	<form class="addInst">
 		<input class="col s12 m5 l5" type="text"

@@ -68,7 +68,7 @@
 				%>
 
 				<tr
-					onclick="document.location = 'editarInstituicao?nome=<%=lista.get(i).getNome()%>&cnpj=<%=lista.get(i).getCnpj()%>&telefone=<%=lista.get(i).getTelefone()%>&endereco=<%=lista.get(i).getEndereco()%>&nivelCurso=<%=lista.get(i).getNivel()%>&email=<%=lista.get(i).getEmail()%>&nomeResponsavel=<%=lista.get(i).getNomeResponsavel()%>&telefoneResponsavel=<%=lista.get(i).getTelefoneResponsavel()%>&emailResponsavel=<%=lista.get(i).getEmailResponsavel()%>';"
+					onclick="document.location = 'editarInstituicao?nome=<%=lista.get(i).getNome()%>&cnpj=<%=lista.get(i).getCnpj()%>&telefone=<%=lista.get(i).getTelefone()%>&endereco=<%=lista.get(i).getEndereco()%>&nivelCurso=<%=lista.get(i).getNivelCurso()%>&email=<%=lista.get(i).getEmail()%>&nomeResponsavel=<%=lista.get(i).getNomeResponsavel()%>&telefoneResponsavel=<%=lista.get(i).getTelefoneResponsavel()%>&emailResponsavel=<%=lista.get(i).getEmailResponsavel()%>';"
 					class="linhaTabela">
 					<td><%=lista.get(i).getNome()%></td>
 					<td><%=lista.get(i).getCnpj()%></td>

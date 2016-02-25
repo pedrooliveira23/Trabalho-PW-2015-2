@@ -13,8 +13,9 @@ public class InstituicaoBo {
 		dao.remover(instituicao);
 	}
 	
-	public void editar(Instituicao instituicao, Instituicao instituicaoAnterior) {
-		dao.editar(instituicao, instituicaoAnterior);
+	public void editar(Instituicao instituicao) {
+		Instituicao antiga = dao.pesquisar(instituicao.getCnpj()).get(0);
+		dao.editar(instituicao, antiga);
 	}
 	
 	public List<Instituicao> pesquisar(String dadoCadastral) {

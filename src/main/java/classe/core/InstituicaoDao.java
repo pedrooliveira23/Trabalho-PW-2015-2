@@ -50,17 +50,17 @@ public class InstituicaoDao {
 		remover(instituicaoAnterior);
 		adicionar(instituicao);
 	}
-	
+
 	public List<Instituicao> pesquisar(String dadoCadastral) {
 		List<Instituicao> result = new ArrayList<Instituicao>();
 		try {
-			String jpql = "from Instituicoes where nome = '" + dadoCadastral
-					+ "' or nivelCurso'" + dadoCadastral + "' or endereco'"
-					+ dadoCadastral + "' or telefone'" + dadoCadastral
-					+ "' or email'" + dadoCadastral + "' or nomeResponsavel'"
-					+ dadoCadastral + "' or telefoneResponsavel'"
-					+ dadoCadastral + "' or emailResponsavel'" + dadoCadastral
-					+ "'";
+			String jpql = "from Instituicao where cnpj = '" + dadoCadastral
+					+ "' or nome = '" + dadoCadastral + "' or nivelCurso ='"
+					+ dadoCadastral + "' or endereco='" + dadoCadastral
+					+ "' or telefone='" + dadoCadastral + "' or email='"
+					+ dadoCadastral + "' or nomeResponsavel='" + dadoCadastral
+					+ "' or telefoneResponsavel='" + dadoCadastral
+					+ "' or emailResponsavel='" + dadoCadastral + "'";
 			result = JpaUtil.getEntityManager()
 					.createQuery(jpql, Instituicao.class).getResultList();
 		} catch (Exception e) {
@@ -74,7 +74,7 @@ public class InstituicaoDao {
 	public List<Instituicao> listar() {
 		List<Instituicao> result = new ArrayList<Instituicao>();
 		try {
-			String jpql = "from Instituicoes";
+			String jpql = "from Instituicao";
 			result = JpaUtil.getEntityManager()
 					.createQuery(jpql, Instituicao.class).getResultList();
 		} catch (Exception e) {

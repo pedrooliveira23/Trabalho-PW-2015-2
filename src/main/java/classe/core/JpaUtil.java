@@ -8,7 +8,7 @@ public class JpaUtil {
 
 	private static final ThreadLocal<EntityManager> threadLocal = new ThreadLocal<EntityManager>();
 
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("alunos-persistence-unit");
+	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("instituicoes-persistence-unit");
 
 	public static EntityManager getEntityManager() {
 		EntityManager em = threadLocal.get();
