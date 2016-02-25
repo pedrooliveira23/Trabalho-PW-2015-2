@@ -28,7 +28,7 @@ public class EditarInstituicaoServlet extends HttpServlet {
 
 		String acaoParam = req.getParameter("acao");
 		String acao = acaoParam == null ? "" : acaoParam;
-		
+
 		Instituicao instituicao = getInstituicao(req);
 
 		InstituicaoBo bo = new InstituicaoBo();
@@ -43,11 +43,12 @@ public class EditarInstituicaoServlet extends HttpServlet {
 
 		if (acao.equals("Excluir")) {
 			bo.remover(bo.pesquisar(instituicao.getCnpj()).get(0));
+			resp.sendRedirect("sistema");
+		} else {
+
+			req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(
+					req, resp);
 		}
-
-		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req,
-				resp);
-
 	}
 
 	private Instituicao getInstituicao(HttpServletRequest req) {

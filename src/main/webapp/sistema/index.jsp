@@ -48,9 +48,10 @@
 	</nav>
 	<main class="container grey-text text-darken-4">
 	<h1>Pesquisar Instituição</h1>
-	<form>
-		<input type="text" name="pesquisa"
-			placeholder="Entre com algum dado da instituição" />
+	<form class="row">
+		<i class="material-icons col s1 pesquisar">search</i><input type="text" name="pesquisa"
+			placeholder="Entre com algum dado da instituição" class="col s11"/> 
+			
 	</form>
 	<div class="row">
 		<table style="font-size: 9pt;" class="col s12">

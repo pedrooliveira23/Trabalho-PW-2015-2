@@ -99,3 +99,7 @@ header, main, footer {
 li {
 	font-weight: bold !important;
 }
+
+.pesquisar {
+	font-size: 48px;
+}
