@@ -8,18 +8,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class InstituicaoDao {
-	private EntityManager em = null;
-	private EntityManagerFactory emf = null;
+	private EntityManagerFactory emf = Persistence
+			.createEntityManagerFactory("instituicoes-persistence-unit");
+	private EntityManager em = emf.createEntityManager();
 
 	public void adicionar(Instituicao instituicao) {
 		try {
-			// Obter uma fábrica de conexões com o banco de dados.
-			emf = Persistence
-					.createEntityManagerFactory("instituicoes-persistence-unit");
-
-			// Obter conexão com o banco de dados.
-			em = emf.createEntityManager();
-
 			em.getTransaction().begin();
 
 			em.persist(instituicao);
@@ -42,7 +36,7 @@ public class InstituicaoDao {
 
 	public void remover(Instituicao instituicao) {
 		em.getTransaction().begin();
-		em.remove(instituicao);
+		em.remove(em.contains(instituicao) ? instituicao : em.merge(instituicao));
 		em.getTransaction().commit();
 	}
 
@@ -54,13 +48,13 @@ public class InstituicaoDao {
 	public List<Instituicao> pesquisar(String dadoCadastral) {
 		List<Instituicao> result = new ArrayList<Instituicao>();
 		try {
-			String jpql = "from Instituicao where cnpj = '" + dadoCadastral
-					+ "' or nome = '" + dadoCadastral + "' or nivelCurso ='"
-					+ dadoCadastral + "' or endereco='" + dadoCadastral
-					+ "' or telefone='" + dadoCadastral + "' or email='"
-					+ dadoCadastral + "' or nomeResponsavel='" + dadoCadastral
-					+ "' or telefoneResponsavel='" + dadoCadastral
-					+ "' or emailResponsavel='" + dadoCadastral + "'";
+			String jpql = "from Instituicao where cnpj like '%" + dadoCadastral
+					+ "%' or nome like '%" + dadoCadastral + "%' or nivelCurso like '%"
+					+ dadoCadastral + "%' or endereco like '%" + dadoCadastral
+					+ "%' or telefone like '%" + dadoCadastral + "%' or email like '%"
+					+ dadoCadastral + "%' or nomeResponsavel like '%" + dadoCadastral
+					+ "%' or telefoneResponsavel like '%" + dadoCadastral
+					+ "%' or emailResponsavel like '%" + dadoCadastral + "%'";
 			result = JpaUtil.getEntityManager()
 					.createQuery(jpql, Instituicao.class).getResultList();
 		} catch (Exception e) {

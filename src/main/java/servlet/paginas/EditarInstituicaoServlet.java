@@ -33,13 +33,16 @@ public class EditarInstituicaoServlet extends HttpServlet {
 
 		InstituicaoBo bo = new InstituicaoBo();
 		if (acao.equals("Editar")) {
-			bo.editar(instituicao);
+			try {
+				bo.editar(instituicao);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		if (acao.equals("Excluir")) {
 			bo.remover(bo.pesquisar(instituicao.getCnpj()).get(0));
-			req.getRequestDispatcher("sistema/index.jsp").forward(req,
-					resp);
 		}
 
 		req.getRequestDispatcher("sistema/editarInstituicao.jsp").forward(req,

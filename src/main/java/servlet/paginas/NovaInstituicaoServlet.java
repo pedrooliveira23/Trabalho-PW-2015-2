@@ -1,8 +1,9 @@
 package servlet.paginas;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.io.PrintWriter;
 
+import javax.persistence.PersistenceException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import classe.core.Instituicao;
 import classe.core.InstituicaoBo;
-import classe.core.InstituicaoDao;
 
 /**
  * Servlet implementation class NovaInstituicaoServlet
@@ -24,18 +24,21 @@ public class NovaInstituicaoServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
 
 		String acaoParam = req.getParameter("acao");
 		String acao = acaoParam == null ? "" : acaoParam;
-		
+
 		Instituicao instituicao = getInstituicao(req);
-		
+
 		InstituicaoBo bo = new InstituicaoBo();
-		
-		if (acao.equals("Enviar") && !instituicao.getCnpj().equals("")
-				&& !bo.pesquisar(instituicao.getCnpj()).contains(instituicao)) {
-			bo.adicionar(instituicao);
+
+		if (acao.equals("Enviar")) {
+			if (!instituicao.getCnpj().equals("")) {
+				bo.adicionar(instituicao);
+			} else {
+				req.getRequestDispatcher("sistema/500.jsp").forward(req,
+						resp);
+			}
 		}
 
 		if (acao.equals("Limpar")) {
@@ -55,7 +58,7 @@ public class NovaInstituicaoServlet extends HttpServlet {
 				resp);
 
 	}
-	
+
 	private Instituicao getInstituicao(HttpServletRequest req) {
 		String nomeParam = req.getParameter("nome");
 		String nivelCursoParam = req.getParameter("nivelCurso");
@@ -81,10 +84,9 @@ public class NovaInstituicaoServlet extends HttpServlet {
 				: emailResponsavelParam;
 		String cnpj = cnpjParam == null ? "" : cnpjParam;
 
-		return new Instituicao(nome, nivelCurso, endereco,
-				telefone, email, nomeResponsavel, telefoneResponsavel,
-				emailResponsavel, cnpj);
-		
+		return new Instituicao(nome, nivelCurso, endereco, telefone, email,
+				nomeResponsavel, telefoneResponsavel, emailResponsavel, cnpj);
+
 	}
 
 }

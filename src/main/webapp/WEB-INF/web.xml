@@ -74,4 +74,10 @@
   	<servlet-name>RedirServlet</servlet-name>
   	<url-pattern>/RedirServlet</url-pattern>
   </servlet-mapping>
+  <error-page>
+  	<error-code>500</error-code>
+  	
+  	
+  	<location>/sistema/500.jsp</location>
+  </error-page>
 </web-app>

@@ -52,7 +52,7 @@
 			placeholder="Nome da  Instituição" name="nome"
 			value="<%=request.getParameter("nome")%>" /> <input
 			class="col s12 m5 l5" type="text" placeholder="CNPJ" name="cnpj"
-			value="<%=request.getParameter("cnpj")%>" /> <input
+			value="<%=request.getParameter("cnpj")%>" readonly /> <input
 			class="col s12 m5 l5" type="text" placeholder="Nível de curso"
 			name="nivelCurso" value="<%=request.getParameter("nivelCurso")%>" /> <input class="col s12 m5 l5" type="text"
 			placeholder="Endereço" name="endereco"
