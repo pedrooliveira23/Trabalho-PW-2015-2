@@ -23,7 +23,7 @@
 		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<div class="center">
-	<form class="centralizar">
+	<form class="centralizar" method="post">
 		<a href="sistema" class="brand-logo"><img src="Imagens/Logo.png" /></a>
 		<input type="text" placeholder="Nome de Usuário" name="usuario" /> <input
 			type="password" placeholder="Senha" name="senha" /> <input class="btn" type="submit"
