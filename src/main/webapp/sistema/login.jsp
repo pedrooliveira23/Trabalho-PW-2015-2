@@ -29,6 +29,7 @@
 			type="password" placeholder="Senha" name="senha" /> <input class="btn" type="submit"
 			value="Entrar" />
 	</form>
+		<p style="color:red;"><%=request.getAttribute("erro")%></p>
 	</div>
 </body>
 </html>

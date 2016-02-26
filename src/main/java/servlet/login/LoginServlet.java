@@ -21,6 +21,8 @@ public class LoginServlet extends HttpServlet {
 
 		HttpSession sessaolog = req.getSession();
 
+		req.setAttribute("erro", "");
+
 		Usuario usuario = getUsuario(req);
 		UsuarioBo bo = new UsuarioBo();
 
@@ -29,6 +31,11 @@ public class LoginServlet extends HttpServlet {
 		if (sessaolog.getAttribute("usuarioLogado").equals(true)) {
 			resp.sendRedirect("sistema");
 		} else {
+			if (!usuario.getNomeUsuario().equals("")
+					|| !usuario.getSenha().equals("")) {
+				req.setAttribute("erro",
+						"Usuário ou senha incorreta! Contate o administrador.");
+			}
 			req.getRequestDispatcher("sistema/login.jsp").forward(req, resp);
 		}
 	}
